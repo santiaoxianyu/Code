@@ -125,7 +125,7 @@ int main(void)
 	uint8_t data;
 	HAL_UART_Receive_IT(&huart1, &data, 1);
 	printf("Init OK!!!\r\n");
-    // 重置传感器
+    // 重置传感器1111
 	softReset();
 
 ////	enableRotationVector(1);

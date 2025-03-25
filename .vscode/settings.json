@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "usart.h": "c",
-        "main.h": "c"
+        "main.h": "c",
+        "headfile.h": "c",
+        "tim.h": "c"
     }
 }
