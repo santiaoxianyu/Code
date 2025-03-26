@@ -12,7 +12,7 @@ extern unsigned int  rawGyroZ;
 // extern track_assignment[8];
 // extern track_sum;
 //转向环变量
-int8_t flag;
+//int8_t flag;
 // int16_t straight_right;
 // int16_t straight_left;
 // int16_t pid_turn;

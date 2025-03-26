@@ -6,11 +6,6 @@ uint16_t track_Mode;
 int8_t track_assignment[8];
 int8_t track_sum;
 
-// uint16_t Sensor_ModeGet(void)
-// {
-// 	return track_Mode;
-// }
-
 void Track_follow(void)
 {
 	
