@@ -133,7 +133,7 @@ float turn_PID_yaw(PID_Controller *pid,float yaw,float aim)
 	return pwm;	
 }
 
-void steering_ring(int T_left,int T_right)//转向环
+void steering_ring()//转向环
 {              
 	Encoder1=Read_Speed(&htim2);
 	Encoder2=-Read_Speed(&htim3);    
@@ -150,10 +150,11 @@ void steering_ring(int T_left,int T_right)//转向环
 //	if(pid_turn<-4)pid_turn=-3;+pid_turn)
 //	else pid_turn=turn_PID_yaw(&yaw_pid,processor.yaw , );
 
-	straight_right=(int16_t)pid1(&right_pid,Encoder1,T_right+pid_turn);
-	straight_left=(int16_t)pid1(&left_pid,Encoder2,T_left-pid_turn);
-	// straight_right=(int16_t)pid1(&right_pid,Encoder1,L_Target_Speed+pid_turn);
-	// straight_left=(int16_t)pid1(&left_pid,Encoder2,L_Target_Speed-pid_turn);
+	// straight_right=(int16_t)pid1(&right_pid,right,L_Target_Speed+pid_turn);
+	// straight_left=(int16_t)pid1(&left_pid,left,L_Target_Speed-pid_turn);
+
+	straight_right=(int16_t)pid1(&right_pid,Encoder1,L_Target_Speed+pid_turn);
+	straight_left=(int16_t)pid1(&left_pid,Encoder2,L_Target_Speed-pid_turn);
 
 //	straight_right=pid1(&right_pid,right,pid_turn);
 //	straight_left=pid1(&left_pid,left,-pid_turn);
@@ -166,7 +167,7 @@ void steering_ring(int T_left,int T_right)//转向环
 }
 
 
-void Track_ring(int track_turn)//寻迹环
+void Track_ring()//寻迹环
 {
 	track_turn=track_pid(&track_pid_assignment,track_sum);
 	track_left=pid1(&left_pid,Encoder1,25-track_turn);

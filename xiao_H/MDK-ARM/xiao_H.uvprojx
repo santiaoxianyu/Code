@@ -720,6 +720,16 @@
               <FileType>5</FileType>
               <FilePath>..\Core\Inc\Key.h</FilePath>
             </File>
+            <File>
+              <FileName>VOFA.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Core\Inc\VOFA.h</FilePath>
+            </File>
+            <File>
+              <FileName>vofa.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Use\vofa.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

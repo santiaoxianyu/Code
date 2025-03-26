@@ -35,7 +35,13 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+//char RxBuffer[256]; 
+uint8_t aRxBuffer;			//接收中断缓冲
+uint8_t Uart1_Rx_Cnt = 0;		//接收缓冲计数
+// extern uint8_t RxBuffer[1];//串口接收缓冲
+// extern uint8_t RxLine = 0;//指令长度
+ extern uint8_t DataBuff[200];//指令内容
+ extern int8_t flag;
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -131,9 +137,11 @@ int main(void)
 	//BNO085 IIC 初始化
 	I2C_Init();  
 	HAL_Delay(2000);//延时2秒
-	uint8_t data;
-	HAL_UART_Receive_IT(&huart1, &data, 1);
-	printf("Init OK!!!\r\n");
+  HAL_UART_Receive_IT(&huart1, (uint8_t *)&aRxBuffer, 1);
+
+	// uint8_t data;
+	// HAL_UART_Receive_IT(&huart1, &data, 1);
+	 printf("Init OK!!!\r\n");
     // 重置传感器
 	softReset();
 
@@ -173,8 +181,8 @@ int main(void)
     Read();
     Angle_out();
     OLED_ShowString(2,1,"yaw:");
-	  OLED_ShowSignedNum(2,5,yawl,3);
-    topic=1;
+	OLED_ShowSignedNum(2,5,yawl,3);
+    topic=4;
     switch (topic)
     {
       case 1:
@@ -248,20 +256,76 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-int fputc(int ch,FILE *f) 
+ 
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
-//采用轮询方式发送1字节数据，超时时间设置为无限等待
-HAL_UART_Transmit(&huart1,(uint8_t *)&ch,1,HAL_MAX_DELAY);
-return ch;
-}
+  /* Prevent unused argument(s) compilation warning */
+  UNUSED(huart);
+  /* NOTE: This function Should not be modified, when the callback is needed,
+           the HAL_UART_TxCpltCallback could be implemented in the user file
+   */
+  if(Uart1_Rx_Cnt >= 255)  //溢出判断
+  {
+      Uart1_Rx_Cnt = 0;
+      memset(DataBuff, 0x00, sizeof(DataBuff));  // 清空接收缓冲区
+      HAL_UART_Transmit(&huart1, (uint8_t *)"数据溢出", 10, 0xFFFF);  // 发送溢出提示
+  }
+  else
+  {
+      DataBuff[Uart1_Rx_Cnt++] = aRxBuffer;   // 接收数据转存到 DataBuff
+  
+      // 判断结束位（0x0D 0x0A，即 \r\n）
+      if((DataBuff[Uart1_Rx_Cnt-1] == 0x0A) && (DataBuff[Uart1_Rx_Cnt-2] == 0x0D)) 
+      {
+          // 将收到的数据回传
+          HAL_UART_Transmit(&huart1, (uint8_t *)&DataBuff, Uart1_Rx_Cnt, 0xFFFF);
+          
+          // 等待发送完成（可选，根据需求决定是否阻塞）
+          while(HAL_UART_GetState(&huart1) == HAL_UART_STATE_BUSY_TX);
+  
+          // 重置计数器和缓冲区
+          Uart1_Rx_Cnt = 0;
+          memset(DataBuff, 0x00, sizeof(DataBuff));
+      }
+  }
+	// if(Uart1_Rx_Cnt >= 255)  //溢出判断
+	// {
+	// 	Uart1_Rx_Cnt = 0;
+	// 	memset(RxBuffer,0x00,sizeof(RxBuffer));
+	// 	HAL_UART_Transmit(&huart1, (uint8_t *)"数据溢出", 10,0xFFFF); 	
+        
+	// }
+	// else
+	// {
+	// 	RxBuffer[Uart1_Rx_Cnt++] = aRxBuffer;   //接收数据转存
+	
+	// 	if((RxBuffer[Uart1_Rx_Cnt-1] == 0x0A)&&(RxBuffer[Uart1_Rx_Cnt-2] == 0x0D)) //判断结束位
+	// 	{
+	// 		HAL_UART_Transmit(&huart1, (uint8_t *)&RxBuffer, Uart1_Rx_Cnt,0xFFFF); //将收到的信息发送出去
+  //           while(HAL_UART_GetState(&huart1) == HAL_UART_STATE_BUSY_TX);//检测UART发送结束
+	// 		Uart1_Rx_Cnt = 0;
+	// 		memset(RxBuffer,0x00,sizeof(RxBuffer)); //清空数组
+	// 	}
 
-int fgetc(FILE *f)
-{
-uint8_t ch;
-// 采用轮询方式接收 1字节数据，超时时间设置为无限等待
-HAL_UART_Receive( &huart1,(uint8_t*)&ch,1, HAL_MAX_DELAY );
-return ch;
+	// }
+	
+	HAL_UART_Receive_IT(&huart1, (uint8_t *)&aRxBuffer, 1);   //再开启接收中断
 }
+/* USER CODE END 4 */
+// int fputc(int ch,FILE *f) 
+// {
+// //采用轮询方式发送1字节数据，超时时间设置为无限等待
+// HAL_UART_Transmit(&huart1,(uint8_t *)&ch,1,HAL_MAX_DELAY);
+// return ch;
+// }
+
+// int fgetc(FILE *f)
+// {
+// uint8_t ch;
+// // 采用轮询方式接收 1字节数据，超时时间设置为无限等待
+// HAL_UART_Receive( &huart1,(uint8_t*)&ch,1, HAL_MAX_DELAY );
+// return ch;
+// }
 
 void Read(void)
 {
@@ -279,7 +343,7 @@ void Read(void)
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
 	if ( dataAvailable() )
-    {
+  {
       q0 = getQuatReal();
       q1 = getQuatI();
       q2 = getQuatJ();
@@ -290,7 +354,9 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
       yaw = atan2( 2 * ( q0 * q3 + q1 * q2 ) ,  1 - 2 * ( q2 * q2 + q3 * q3 ) ) * 57.3;
       
       printf("%f,%f,%f\n", roll, pitch, yaw);
-    } 
+  }  		
+  if(flag==0)steering_ring();							
+  if(flag==1)Track_ring();
 }
 
 void Angle_out(void)

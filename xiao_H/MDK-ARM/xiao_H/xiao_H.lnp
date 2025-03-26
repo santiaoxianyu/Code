@@ -34,6 +34,7 @@
 ".\xiao_h\track.o"
 ".\xiao_h\pid.o"
 ".\xiao_h\key.o"
+".\xiao_h\vofa.o"
 --library_type=microlib --strict --scatter ".\xiao_H\xiao_H.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
