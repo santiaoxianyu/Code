@@ -9,7 +9,7 @@
 .\xiao_h\key.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 .\xiao_h\key.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h
 .\xiao_h\key.o: ../Drivers/CMSIS/Include/core_cm4.h
-.\xiao_h\key.o: D:\keil\C51\ARM\ARMCC\Bin\..\include\stdint.h
+.\xiao_h\key.o: F:\d\keil5\ARM\ARMCC\Bin\..\include\stdint.h
 .\xiao_h\key.o: ../Drivers/CMSIS/Include/cmsis_version.h
 .\xiao_h\key.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 .\xiao_h\key.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
@@ -17,7 +17,7 @@
 .\xiao_h\key.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
 .\xiao_h\key.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 .\xiao_h\key.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-.\xiao_h\key.o: D:\keil\C51\ARM\ARMCC\Bin\..\include\stddef.h
+.\xiao_h\key.o: F:\d\keil5\ARM\ARMCC\Bin\..\include\stddef.h
 .\xiao_h\key.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
 .\xiao_h\key.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
 .\xiao_h\key.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
@@ -39,10 +39,10 @@
 .\xiao_h\key.o: ../Core/Inc/headfile.h
 .\xiao_h\key.o: ../Core/Inc/i2c.h
 .\xiao_h\key.o: ../Core/Inc/tim.h
-.\xiao_h\key.o: D:\keil\C51\ARM\ARMCC\Bin\..\include\stdio.h
-.\xiao_h\key.o: D:\keil\C51\ARM\ARMCC\Bin\..\include\stdlib.h
-.\xiao_h\key.o: D:\keil\C51\ARM\ARMCC\Bin\..\include\string.h
-.\xiao_h\key.o: D:\keil\C51\ARM\ARMCC\Bin\..\include\math.h
+.\xiao_h\key.o: F:\d\keil5\ARM\ARMCC\Bin\..\include\stdio.h
+.\xiao_h\key.o: F:\d\keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\xiao_h\key.o: F:\d\keil5\ARM\ARMCC\Bin\..\include\string.h
+.\xiao_h\key.o: F:\d\keil5\ARM\ARMCC\Bin\..\include\math.h
 .\xiao_h\key.o: ../Core/Inc/delay.h
 .\xiao_h\key.o: ../Core/Inc/headfile.h
 .\xiao_h\key.o: ../Core/Inc/bno085.h

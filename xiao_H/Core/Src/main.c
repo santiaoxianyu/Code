@@ -59,6 +59,8 @@ void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
 void Angle_out(void);
 void Read(void);
+void steering_ring(void);//转向环
+void Track_ring(void);//寻迹环
 void one_topic(void);
 void two_topic(void);
 void three_topic(void);
@@ -69,7 +71,7 @@ void four_topic(void);
 /* USER CODE BEGIN 0 */
 //板子上的电机2的PID控制器
 PID_Controller left_pid = {
-    .p=100.0f,
+    .p=0.0f,
     .i=0.0f
 }; 
 //板子上的电机1的PID控制器
@@ -163,8 +165,8 @@ int main(void)
 	HAL_TIM_Encoder_Start(&htim2,TIM_CHANNEL_ALL);
 	HAL_TIM_Encoder_Start(&htim3,TIM_CHANNEL_ALL);	
 	//BNO085 IIC 初始化
-	I2C_Init();  
-	HAL_Delay(2000);//延时2秒
+//	I2C_Init();  
+//	HAL_Delay(2000);//延时2秒
   HAL_UART_Receive_IT(&huart1, (uint8_t *)&RxBuffer, 1);
 
 	// uint8_t data;
@@ -183,7 +185,7 @@ int main(void)
 	// 开始校准（可选）
 	calibrateAll();//全部校准
 	OLED_ShowString(1,1,"Init_OK");
-	HAL_Delay(3000);
+//	HAL_Delay(3000);
 	OLED_Clear();		
 	//初始化完成，开启中断
 	HAL_TIM_Base_Start_IT(&htim4);	
@@ -197,6 +199,7 @@ int main(void)
   while (1)
   {
     SendDataToVOFA(L_Target_Speed,Encoder1,Encoder2);
+		
     Track_follow(); 
     Read();  
     OLED_ShowString(2,1,"yaw:");
@@ -305,9 +308,9 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 //看编码器数据
 void Read(void)
 {
-	if(uwTick-sys_tick<10)           
-		return;
-	sys_tick=uwTick;                 
+//	if(uwTick-sys_tick<10)           
+//		return;
+//	sys_tick=uwTick;                 
 	// Encoder1=Read_Speed(&htim2);
 	// Encoder2=-Read_Speed(&htim3);    
 	OLED_ShowString(1,1,"T:");
@@ -362,7 +365,7 @@ void Angle_out(void)
 		  yawl=yaww;
 //		 OLED_ShowSignedNum(3,1,yawl,3);
 }
-void steering_ring()//转向环
+void steering_ring(void)//转向环
 {              
 //	pid_turn=turn_PID_yaw(&yaw_pid,yawl,L_Target_Position);
 
@@ -378,7 +381,7 @@ void steering_ring()//转向环
 }
 
 
-void Track_ring()//寻迹环
+void Track_ring(void)//寻迹环
 {
 	track_turn=track_pid(&track_pid_assignment,track_sum);
 	track_left=pid1(&left_pid,Encoder1,25-track_turn);

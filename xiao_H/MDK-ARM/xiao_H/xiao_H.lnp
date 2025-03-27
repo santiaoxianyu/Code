@@ -1,4 +1,4 @@
---cpu=Cortex-M4.fp
+--cpu=Cortex-M4.fp.sp
 ".\xiao_h\startup_stm32f407xx.o"
 ".\xiao_h\main.o"
 ".\xiao_h\gpio.o"
