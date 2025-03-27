@@ -61,7 +61,6 @@ extern UART_HandleTypeDef huart1;   //声明串口
    HAL_UART_Receive(&huart1, &ch, 1, 0xffff);
    return ch;
  }
- 
 /** @addtogroup STM32F4xx_HAL_Driver
   * @{
   */

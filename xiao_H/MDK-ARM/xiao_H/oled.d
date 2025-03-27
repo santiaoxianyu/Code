@@ -51,4 +51,6 @@
 .\xiao_h\oled.o: ../Core/Inc/track.h
 .\xiao_h\oled.o: ../Core/Inc/pid.h
 .\xiao_h\oled.o: ../Core/Inc/key.h
+.\xiao_h\oled.o: ../Core/Inc/VOFA.h
+.\xiao_h\oled.o: ../Core/Inc/usart.h
 .\xiao_h\oled.o: Use\OLED_Font.h

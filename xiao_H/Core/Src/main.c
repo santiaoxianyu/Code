@@ -69,7 +69,7 @@ void four_topic(void);
 /* USER CODE BEGIN 0 */
 //板子上的电机2的PID控制器
 PID_Controller left_pid = {
-    .p=0.0f,
+    .p=100.0f,
     .i=0.0f
 }; 
 //板子上的电机1的PID控制器
@@ -191,16 +191,17 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-	Load(0,0);
+//	Load(0,0);
   int topic;
- 
+  L_Target_Speed=30;
   while (1)
   {
+    SendDataToVOFA(L_Target_Speed,Encoder1,Encoder2);
     Track_follow(); 
-    Read();
-    Angle_out();      
+    Read();  
     OLED_ShowString(2,1,"yaw:");
 	  OLED_ShowSignedNum(2,5,yawl,3);
+//    Load(2000,2000);
     // SendDataToVOFA(L_Target_Speed,left,right);
     // topic=4;
     // switch (topic)
@@ -307,8 +308,8 @@ void Read(void)
 	if(uwTick-sys_tick<10)           
 		return;
 	sys_tick=uwTick;                 
-	Encoder1=Read_Speed(&htim2);
-	Encoder2=-Read_Speed(&htim3);    
+	// Encoder1=Read_Speed(&htim2);
+	// Encoder2=-Read_Speed(&htim3);    
 	OLED_ShowString(1,1,"T:");
 	OLED_ShowString(1,8,"F:");
 	OLED_ShowSignedNum(1,3,Encoder1,3);
@@ -330,6 +331,9 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
       
 //      printf("%f,%f,%f\n", roll, pitch, yaw);
   }  
+  Angle_out();
+  Encoder1=-Read_Speed(&htim2);
+	Encoder2=Read_Speed(&htim3);  
   if(flag==0)steering_ring();							
   if(flag==1)Track_ring();
 }
@@ -360,10 +364,7 @@ void Angle_out(void)
 }
 void steering_ring()//转向环
 {              
-	Encoder1=Read_Speed(&htim2);
-	Encoder2=Read_Speed(&htim3);    
-
-	pid_turn=turn_PID_yaw(&yaw_pid,yawl,L_Target_Position);
+//	pid_turn=turn_PID_yaw(&yaw_pid,yawl,L_Target_Position);
 
 	straight_right=(int16_t)pid1(&right_pid,Encoder1,L_Target_Speed+pid_turn);
 	straight_left=(int16_t)pid1(&left_pid,Encoder2,L_Target_Speed-pid_turn);

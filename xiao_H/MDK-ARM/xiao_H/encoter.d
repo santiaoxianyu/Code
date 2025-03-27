@@ -51,3 +51,5 @@
 .\xiao_h\encoter.o: ../Core/Inc/track.h
 .\xiao_h\encoter.o: ../Core/Inc/pid.h
 .\xiao_h\encoter.o: ../Core/Inc/key.h
+.\xiao_h\encoter.o: ../Core/Inc/VOFA.h
+.\xiao_h\encoter.o: ../Core/Inc/usart.h

@@ -183,6 +183,9 @@
           },
           {
             "path": "use/key.h"
+          },
+          {
+            "path": "../xiao_H/MDK-ARM/Use/vofa.c"
           }
         ],
         "folders": []

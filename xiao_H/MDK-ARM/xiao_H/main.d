@@ -51,3 +51,4 @@
 .\xiao_h\main.o: ../Core/Inc/track.h
 .\xiao_h\main.o: ../Core/Inc/pid.h
 .\xiao_h\main.o: ../Core/Inc/key.h
+.\xiao_h\main.o: ../Core/Inc/VOFA.h
