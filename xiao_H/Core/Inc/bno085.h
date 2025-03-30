@@ -128,7 +128,7 @@ void calibrateAccelerometer();
 void calibrateGyro();
 void calibrateMagnetometer();
 void calibratePlanarAccelerometer();
-void calibrateAll();
+int calibrateAll();
 void endCalibration();
 void saveCalibration();
  

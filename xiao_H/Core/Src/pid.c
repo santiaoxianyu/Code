@@ -119,14 +119,14 @@ float pid1(PID_Controller *pid,int16_t speed1,float tar1)
 
 float track_pid(PID_Controller *pid,int8_t  track_err)//寻迹pid控制器-last_err
 {
-	int16_t pwm;
+	float pwm;
 	int8_t derivative;
 	
-	derivative=track_err-err_last;
+	derivative=track_err-pid->last_err;
 	
 	pwm=pid->p*track_err+pid->d*derivative;
 	
-	err_last=track_err;
+	pid->last_err=track_err;
 		
 	return pwm;
 }
@@ -149,7 +149,7 @@ float turn_PID_yaw(PID_Controller *pid,float yaw,float aim)
 	
 //	kp_out=	pid->p*yaw_err;
 		
-	pwm=pid->p*yaw_err+pid->d*deviation+pid->i*pid->sum-0.12*rawGyroZ;
+	pwm=pid->p*yaw_err+pid->d*deviation+pid->i*pid->sum;//-0.12*rawGyroZ
 			
 	pid->last_err=yaw_err;
 	

@@ -582,9 +582,12 @@ void calibratePlanarAccelerometer()
 }
  
 // See 2.2 of the Calibration Procedure document 1000-4044
-void calibrateAll()
+int calibrateAll()
 {
     sendCalibrateCommand(CALIBRATE_ACCEL_GYRO_MAG);
+	return 1;
+	
+	
 }
  
 void endCalibration()

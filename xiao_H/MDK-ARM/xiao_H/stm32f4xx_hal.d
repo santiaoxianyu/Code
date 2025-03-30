@@ -32,4 +32,3 @@
 .\xiao_h\stm32f4xx_hal.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 .\xiao_h\stm32f4xx_hal.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 .\xiao_h\stm32f4xx_hal.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
-.\xiao_h\stm32f4xx_hal.o: F:\d\keil5\ARM\ARMCC\Bin\..\include\stdio.h

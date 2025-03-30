@@ -22,7 +22,7 @@ Dialog DLL:      TCM.DLL V1.56.1.0
  
 <h2>Project:</h2>
 C:\Users\ASUS\Documents\GitHub\Code\xiao_H\MDK-ARM\xiao_H.uvprojx
-Project File Date:  03/27/2025
+Project File Date:  03/29/2025
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 5 (build 528)', folder: 'F:\d\keil5\ARM\ARMCC\Bin'
@@ -85,7 +85,7 @@ compiling main.c...
 ../Core/Inc/bno085.h(130): warning:  #1295-D: Deprecated declaration calibratePlanarAccelerometer - give arg types
   void calibratePlanarAccelerometer();
 ../Core/Inc/bno085.h(131): warning:  #1295-D: Deprecated declaration calibrateAll - give arg types
-  void calibrateAll();
+  int calibrateAll();
 ../Core/Inc/bno085.h(132): warning:  #1295-D: Deprecated declaration endCalibration - give arg types
   void endCalibration();
 ../Core/Inc/bno085.h(133): warning:  #1295-D: Deprecated declaration saveCalibration - give arg types
@@ -98,13 +98,13 @@ compiling main.c...
   unsigned char getActivityClassifier();
 ../Core/Inc/pid.h(25): warning:  #1-D: last line of file ends without a newline
   #endif
-../Core/Src/main.c(203): warning:  #223-D: function "Track_follow" declared implicitly
+../Core/Src/main.c(212): warning:  #223-D: function "Track_follow" declared implicitly
       Track_follow(); 
-../Core/Src/main.c(197): warning:  #177-D: variable "topic"  was declared but never referenced
+../Core/Src/main.c(201): warning:  #177-D: variable "topic"  was declared but never referenced
     int topic;
 ../Core/Src/main.c: 37 warnings, 0 errors
 linking...
-Program Size: Code=29988 RO-data=2348 RW-data=276 ZI-data=1980  
+Program Size: Code=29148 RO-data=2268 RW-data=396 ZI-data=1876  
 FromELF: creating hex file...
 ".\xiao_H\xiao_H.axf" - 0 Error(s), 37 Warning(s).
 

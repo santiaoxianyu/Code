@@ -102,7 +102,7 @@
 
  void HAL_Serial_SendArray(UART_HandleTypeDef *huart, uint8_t *buffer, uint16_t len)
 {
-    HAL_UART_Transmit(huart, buffer, len, HAL_MAX_DELAY);
+    HAL_UART_Transmit(huart, buffer, len, 100);
 }
 
  void SendDataToVOFA(float target, int16_t speed,int16_t speed1) 

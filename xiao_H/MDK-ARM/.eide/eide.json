@@ -185,10 +185,10 @@
             "path": "../Core/Inc/Key.h"
           },
           {
-            "path": "Use/vofa.c"
+            "path": "../Core/Inc/VOFA.h"
           },
           {
-            "path": "../Core/Inc/VOFA.h"
+            "path": "Use/vofa.c"
           }
         ],
         "folders": []
@@ -356,14 +356,13 @@
           "../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy",
           "../Drivers/CMSIS/Device/ST/STM32F4xx/Include",
           "../Drivers/CMSIS/Include",
-          ".cmsis/include",
           "RTE/_xiao_H"
         ],
-        "libList": [],
         "defineList": [
           "USE_HAL_DRIVER",
           "STM32F407xx"
-        ]
+        ],
+        "libList": []
       },
       "builderOptions": {
         "AC5": {
