@@ -4,6 +4,14 @@
             "path": "."
         }
     ],
-    "settings": {},
+    "settings": {
+        "files.associations": {
+            "main.h": "c",
+            "track.h": "c",
+            "headfile.h": "c",
+            "i2c.h": "c",
+            "gpio.h": "c"
+        }
+    },
     "extensions": {}
 }

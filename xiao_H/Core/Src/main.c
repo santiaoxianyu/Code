@@ -22,7 +22,6 @@
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
-//#include "track.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -66,7 +65,7 @@ void steering_ring(void);//转向�?
 void Track_ring(void);//寻迹�?
 void one_topic(void);
 void two_topic(void);
-void three_topic(void);
+void three(void);
 void four_topic(void);
 /* USER CODE END PFP */
 
@@ -198,18 +197,24 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 //	Load(0,0);
-  int topic;
-//  L_Target_Speed=30;
-  flag=1;
+  
+//  L_Target_Speed=0;
+
 //	OLED_ShowString(1,1,"T:");
 //	OLED_ShowString(1,8,"F:");
 
 //  L_Target_Position=30;
+  
   while (1)
-  {
+  { 
+    flag=3;
+    if(key_pd[0].keys_read==0){OLED_ShowString(1,1,"three");three(); } 
+   
+    else if(key_pd[1].keys_read==0){OLED_ShowString(1,1,"stop  ");flag=3;Load(0,0); }
+ 
 //    SendDataToVOFA(L_Target_Speed,Encoder1,Encoder2);
 		
-    Track_follow(); 
+//    Track_follow(); 
 //    Read();  
     OLED_ShowString(2,1,"yaw:");
 	  OLED_ShowSignedNum(2,5,yawl,3);
@@ -346,11 +351,12 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	Encoder2=0.6*Encoder2+0.4*Encoder2_last;
 	Encoder1=0.6*Encoder1+0.4*Encoder1_last;
 	
-  if(flag==0)steering_ring();							
-  if(flag==1)Track_ring();
+  if(flag==0)steering_ring();		//标志位为0，判断为转向环					
+  if(flag==1)Track_ring();		//标志位为1，判断为寻迹环
 	Encoder2_last=Encoder2;
 	Encoder1_last=Encoder1;
 
+//获取BNO085传感器数据  
 	if ( dataAvailable() )
   {
       q0 = getQuatReal();
@@ -359,51 +365,48 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
       q3 = getQuatK();
       yaw = atan2( 2 * ( q0 * q3 + q1 * q2 ) ,  1 - 2 * ( q2 * q2 + q3 * q3 ) ) * 57.3;
   }
-   Angle_out();
-	
-// 读取GPIOD端口上PIN_0到PIN_3的状态，并将读取的值分别存储在key_pd数组的keys_read成员中
-key_pd[0].keys_read = HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_0); // 读取PIN_0的状态
-key_pd[1].keys_read = HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_1); // 读取PIN_1的状态
-key_pd[2].keys_read = HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_2); // 读取PIN_2的状态
-key_pd[3].keys_read = HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_3); // 读取PIN_3的状态
+  Angle_out();
+  // 读取GPIOD端口上PIN_0到PIN_3的状态，并将读取的值分别存储在key_pd数组的keys_read成员中
+  key_pd[0].keys_read = HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_0); // 读取PIN_0的状态
+  key_pd[1].keys_read = HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_1); // 读取PIN_1的状态
+  key_pd[2].keys_read = HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_2); // 读取PIN_2的状态
+  key_pd[3].keys_read = HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_3); // 读取PIN_3的状态
 
-// 遍历key_pd数组中的每个按键，检查其状态并更新相应的进度和标志位
-for (int8_t i = 0; i < 4; i++) // 循环变量i从0开始，直到小于4（即遍历key_pd数组的前4个元素）
-{
-    switch (key_pd[i].keys_progres) // 根据当前按键的进度状态进行不同的处理
-    {
-        case 0: // 当按键进度为0时
-        {
-            if (key_pd[i].keys_read == 0) // 如果按键被按下（假设低电平表示按下）
-            {
-                key_pd[i].keys_progres = 1; // 将按键进度更新为1
-            }
-        } break;
-        case 1: // 当按键进度为1时
-        {
-            if (key_pd[i].keys_read == 0) // 如果按键仍然被按下
-            {
-                key_pd[i].keys_progres = 2; // 将按键进度更新为2
-            }
-            else
-            {
-                key_pd[i].keys_progres = 0; // 如果按键被释放，将进度重置为0
-            }
-        } break;
-        case 2: // 当按键进度为2时
-        {
-            if (key_pd[i].keys_read == 1) // 如果按键被释放（假设高电平表示释放）
-            {
-                key_pd[i].keys_flag = 1; // 设置按键标志位为1，可能表示按键已经完成一次按下释放的操作
-                key_pd[i].keys_progres = 0; // 将按键进度重置为0
-            }
-        } break;
-    }
+  // 遍历key_pd数组中的每个按键，检查其状态并更新相应的进度和标志位
+  for (int8_t i = 0; i < 4; i++) // 循环变量i从0开始，直到小于4（即遍历key_pd数组的前4个元素）
+  {
+      switch (key_pd[i].keys_progres) // 根据当前按键的进度状态进行不同的处理
+      {
+          case 0: // 当按键进度为0时
+          {
+              if (key_pd[i].keys_read == 0) // 如果按键被按下（假设低电平表示按下）
+              {
+                  key_pd[i].keys_progres = 1; // 将按键进度更新为1
+              }
+          } break;
+          case 1: // 当按键进度为1时
+          {
+              if (key_pd[i].keys_read == 0) // 如果按键仍然被按下
+              {
+                  key_pd[i].keys_progres = 2; // 将按键进度更新为2
+              }
+              else
+              {
+                  key_pd[i].keys_progres = 0; // 如果按键被释放，将进度重置为0
+              }
+          } break;
+          case 2: // 当按键进度为2时
+          {
+              if (key_pd[i].keys_read == 1) // 如果按键被释放（假设高电平表示释放）
+              {
+                  key_pd[i].keys_flag = 1; // 设置按键标志位为1，可能表示按键已经完成一次按下释放的操作
+                  key_pd[i].keys_progres = 0; // 将按键进度重置为0
+              }
+          } break;
+      }
+  }	
 }
-
-	
-}
-
+//角度矫正
 void Angle_out(void)
 {
 		if(Init_Angle_Flag==1&&yaw!=0)
@@ -426,8 +429,8 @@ void Angle_out(void)
 			 yaww=yaw-yaw_init;			 
 		 }
 		  yawl=yaww;
-//		 OLED_ShowSignedNum(3,1,yawl,3);
 }
+//转向pid控制
 void steering_ring(void)//转向�?
 {              
 	pid_turn=turn_PID_yaw(&yaw_pid,yawl,L_Target_Position);
@@ -442,9 +445,8 @@ void steering_ring(void)//转向�?
 
 	Load(straight_left,straight_right);
 }
-
-
-void Track_ring(void)//寻迹�?
+//寻迹pid控制
+void Track_ring(void)
 {
 	track_turn=track_pid(&track_pid_assignment,track_sum);
 	
@@ -459,6 +461,7 @@ void Track_ring(void)//寻迹�?
 	
 	Load(track_left,track_right);
 }
+//串口数据解析,重定向
 int fputc(int ch, FILE *f)
 {
 	HAL_UART_Transmit(&huart1,(uint8_t *)&ch,1,100);
@@ -479,6 +482,101 @@ void one_topic(void)
 	}
 //  steering_ring(0,0);//转向�?
 }
+
+void three(void)
+{
+  while(1)
+  {
+    Track_follow();
+    uint8_t three_prosses=0;     //分成四部分
+    uint8_t black_cnt=0;        // 存储进入圆环次数  
+    OLED_ShowSignedNum(2,5,yawl,3);   
+    if(flag!=3){L_Target_Speed = 15;}  
+    flag=1;  
+    switch(three_prosses)
+    {
+      case 0:
+      {
+        L_Target_Position=-33;
+        flag=0; 
+        three_prosses=1;
+      }break;
+      case 1:
+      {
+        // 识别黑线，先调整角度
+        if(One_Sensor1)
+        {
+          flag=1;  
+//          three_prosses=3;
+          black_cnt=1;
+        }
+
+//        while(black_cnt==1){flag=1;OLED_ShowString(1,7,"bl");}
+        // for (int i = 0; i < 7; i++)
+        // {
+        //   if(track_read[i] == 0)
+        //   {
+        //      three_prosses=1;
+             
+        //     // if(black_cnt==0){L_Target_Position=0;three_prosses++;}//第一次识别黑线，进入圆环，调整角度
+        //     // if(black_cnt==1){L_Target_Position=-173;three_prosses++;}//第二次识别黑线，调整角度
+        //     break;
+        //   }                 
+        // }        
+      }break;
+      //进入圆环
+      case 2:
+      {       
+        flag=1;       // 进入寻迹环      
+//      black_cnt++; 
+//        three_prosses=2;
+        // if(black_cnt<=1){three_prosses=2;}         
+        // else{three_prosses=4;}     
+      }break;
+      //出圆环，调整角度
+      case 3:
+      {
+        if(All_Sensor1)
+        {
+          Load(0,0);
+          flag=3;        //停止
+        }
+
+        // if(All_Sensor1)
+        // {
+        //   flag=0;
+        //   L_Target_Position=-173;
+        // }
+        // three_prosses=3;
+      }break;
+      //调整角度后，直行
+      case 4:
+      {
+       
+        L_Target_Position=0;
+        flag=3;        //停止
+        // L_Target_Position=-154;         // 进入转向环      
+        // three_prosses=0;
+      }break;
+      //停止
+      case 5:
+      {
+          
+          L_Target_Position=0;
+          flag=3;        //停止
+        // if(All_Sensor1)
+        // {
+        //   flag=0;
+        //   L_Target_Position=0;
+        //   flag=3;        //停止
+        // }
+      }break;
+    } 
+    
+    if(key_pd[1].keys_read==0){OLED_ShowString(1,1,"stop  ");flag=3;Load(0,0);break; }  
+  }
+}
+
 /* USER CODE END 4 */
 
 /**

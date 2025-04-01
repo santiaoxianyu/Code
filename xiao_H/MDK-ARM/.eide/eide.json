@@ -358,11 +358,11 @@
           "../Drivers/CMSIS/Include",
           "RTE/_xiao_H"
         ],
+        "libList": [],
         "defineList": [
           "USE_HAL_DRIVER",
           "STM32F407xx"
-        ],
-        "libList": []
+        ]
       },
       "builderOptions": {
         "AC5": {
