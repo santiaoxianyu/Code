@@ -48,7 +48,6 @@
 .\xiao_h\oled.o: ../Core/Inc/oled.h
 .\xiao_h\oled.o: ../Core/Inc/motor.h
 .\xiao_h\oled.o: ../Core/Inc/encoder.h
-.\xiao_h\oled.o: ../Core/Inc/track.h
 .\xiao_h\oled.o: ../Core/Inc/pid.h
 .\xiao_h\oled.o: ../Core/Inc/key.h
 .\xiao_h\oled.o: ../Core/Inc/VOFA.h
