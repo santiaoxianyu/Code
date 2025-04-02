@@ -10,7 +10,9 @@
             "track.h": "c",
             "headfile.h": "c",
             "i2c.h": "c",
-            "gpio.h": "c"
+            "gpio.h": "c",
+            "tim.h": "c",
+            "bno085.h": "c"
         }
     },
     "extensions": {}

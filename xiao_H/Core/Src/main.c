@@ -69,6 +69,7 @@ void one_topic(void);
 void two_topic(void);
 void three(void);
 void four_topic(void);
+void eight(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -85,8 +86,8 @@ PID_Controller right_pid = {
 }; 
 //直走pid控制�?
 PID_Controller yaw_pid={
-    .p=1.6f,
-    .d=1.2f
+    .p=1.0f,
+    .d=1.4f
   };
 //寻迹pid控制�?  
 PID_Controller track_pid_assignment={
@@ -121,6 +122,7 @@ float q0, q1, q2, q3;
 float roll, pitch, yaw;
 extern int8_t track_read[8];
 
+float gyro_Z ;
 //按键读高低电�?
 struct keys{
   int8_t keys_read;
@@ -203,11 +205,13 @@ int main(void)
 //  L_Target_Speed=0;
 
 
-//  L_Target_Position=30;
+ //L_Target_Position=30;
   
+
+
   while (1)
   { 
-    flag=3;
+    // flag=3;
     if(key_pd[0].keys_flag==1){three(); key_pd[0].keys_flag=0; } 
    
 //    else if(key_pd[1].keys_flag==0){OLED_ShowString(1,1,"stop  ");flag=3;Load(0,0); }
@@ -216,8 +220,11 @@ int main(void)
 		
 //    Track_follow(); 
 //    Read();  
+    gyro_Z = getGyroZ(); 
     OLED_ShowString(2,1,"yaw:");
 	  OLED_ShowSignedNum(2,5,yawl,3);
+    if(rawGyroZ>=0){OLED_ShowString(3,1,"0");OLED_ShowSignedNum(3,5,rawGyroZ,6);}
+    if(rawGyroZ<0){OLED_ShowString(3,1,"1");OLED_ShowSignedNum(3,5,-rawGyroZ,6);}
 //	  OLED_ShowSignedNum(3,0,key_pd[0].keys_flag,3);
 //	  OLED_ShowSignedNum(3,5,key_pd[1].keys_flag,3);
 //	  OLED_ShowSignedNum(4,0,key_pd[2].keys_flag,3);
@@ -352,10 +359,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	Encoder1=0.6*Encoder1+0.4*Encoder1_last;
 	
   if(flag==0)steering_ring();		//标志位为0，判断为转向环					
-  if(flag==1)Track_ring();		//标志位为1，判断为寻迹环
+  else if(flag==1)Track_ring();		//标志位为1，判断为寻迹环
 	Encoder2_last=Encoder2;
 	Encoder1_last=Encoder1;
-
+  
 //获取BNO085传感器数据  
 	if ( dataAvailable() )
   {
@@ -409,6 +416,30 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 //角度矫正
 void Angle_out(void)
 {
+		if(Init_Angle_Flag==1&&yaw!=0)
+		{
+				yaw_init=yaw;
+			  Init_Angle_Flag=0;			
+	    }
+		 yaww=yaw-yaw_init;
+		 
+		 if(yaww>180)
+		 {
+			yaww=yaww-360;
+		 } 
+		 else if(yaww<-180)
+		 {
+			yaww=yaww+360;
+		 }	 
+		 else
+		 {
+			 yaww=yaw-yaw_init;			 
+		 }
+		  yawl=yaww;
+}
+/*
+void Angle_out(void)
+{
 //		if(Init_Angle_Flag==1&&yaw!=0)
 //		{
 //				yaw_init=yaw;
@@ -421,6 +452,7 @@ void Angle_out(void)
 		{
 			Angle_out_improve();
 	   }
+
 //		 yaww=yaw-yaw_init;
 	
 		 if(yaww>180)
@@ -454,7 +486,7 @@ void Angle_out_improve(void)
 	}
 	
 }
-
+*/
 //转向pid控制
 void steering_ring(void)//转向�?
 {              
@@ -475,9 +507,10 @@ void Track_ring(void)
 {
 	track_turn=track_pid(&track_pid_assignment,track_sum);
 	
-	track_left=(int16_t)pid1(&left_pid,Encoder2,20-track_turn);//
-	track_right=(int16_t)pid1(&right_pid,Encoder1,20+track_turn);//
-	
+  
+  track_left=(int16_t)pid1(&left_pid,Encoder2,20-track_turn);//
+  track_right=(int16_t)pid1(&right_pid,Encoder1,20+track_turn);//
+  
 	
 	if(track_left>7200)track_left=7200;
 	if(track_right>7200)track_right=7200;	
@@ -514,16 +547,17 @@ void three(void)
   {
     Track_follow();
     static uint8_t three_prosses=0;     //分成四部分
-    uint8_t black_cnt=0;        // 存储进入圆环次数  
+//    uint8_t black_cnt=0;        // 存储进入圆环次数  
     OLED_ShowSignedNum(2,5,yawl,3);
-		OLED_ShowSignedNum(1,5,One_Sensor1,3);
-		OLED_ShowSignedNum(3,5,L_Target_Position,3);
-		OLED_ShowSignedNum(4,5,three_prosses,3);
+//		OLED_ShowSignedNum(1,5,One_Sensor1,3);
+//		OLED_ShowSignedNum(3,5,L_Target_Position,3);
+//		OLED_ShowSignedNum(4,5,three_prosses,3);
 		
 //    if(flag!=3){L_Target_Speed = 20;}  
       	
     switch(three_prosses)
-    {			
+    {		
+      //直行，调整角度，向圆环	
       case 0:
       {
 				L_Target_Speed=20;
@@ -534,35 +568,40 @@ void three(void)
            three_prosses=1;		
 				}
       }break;
+       // 识别黑线，先调整角度 
       case 1:
-      {
-        // 识别黑线，先调整角度 
-         L_Target_Speed=5;			
-         L_Target_Position=0;  
+      {       
+         L_Target_Speed=0;			
+         L_Target_Position=0; 
+
          if((int16_t)yawl==0)
 				 {
 						three_prosses=2;
 				 }
       }break;
-      //进入圆环
+      //第一次进入圆环，当全为白色，调整角度，直行
       case 2:
       {       
         flag=1;       // 进入寻迹环      
-				if(All_Sensor1)
+				if(All_Sensor1) 
 				{
-					flag=0;
-					L_Target_Speed=20;
-					L_Target_Position=-147;
-					three_prosses=3;
+             three_prosses=3;
 				}
       }break;
-      //出圆环，调整角度
+      //当识别到黑线，第二次进入圆环
       case 3:
       {
-        if(One_Sensor1)
+        L_Target_Speed=20; 
+        L_Target_Position=-143;//调整角度
+        if(yawl>0)
         {
-          L_Target_Speed=0;
-          flag=3;        //停止
+          yawl=-yawl;
+        }     
+        flag=0;
+        if(One_Sensor1)
+        {          
+          flag=1;        //寻迹环
+          three_prosses=4;
         }
 
         // if(All_Sensor1)
@@ -572,34 +611,89 @@ void three(void)
         // }
         // three_prosses=3;
       }break;
-      //调整角度后，直行
+      //识别到全白，停止
       case 4:
       {
-       
-        L_Target_Position=0;
-        flag=3;        //停止
-        // L_Target_Position=-154;         // 进入转向环      
-        // three_prosses=0;
+        if(All_Sensor1)
+        {
+          // L_Target_Position=0;
+          L_Target_Speed=0;
+          pid_turn=0;
+          flag=0;
+          three_prosses=5;
+        }
       }break;
-      //停止
       case 5:
       {
-          
-          L_Target_Position=0;
-          flag=3;        //停止
-        // if(All_Sensor1)
-        // {
-        //   flag=0;
-        //   L_Target_Position=0;
-        //   flag=3;        //停止
-        // }
-      }break;
+        Load(0,0);
+      }
     } 
     
-    if(key_pd[1].keys_read==0){OLED_ShowString(1,1,"stop  ");flag=3;Load(0,0);break; }  
+    // if(key_pd[1].keys_read==0){OLED_ShowString(1,1,"stop  ");flag=3;Load(0,0);break; }  
   }
 }
 
+//绕八字
+void eight(void)
+{
+  uint8_t topic=0;
+  while(1)
+  {
+    switch(topic)
+    {		
+      //直行，调整角度，向圆环	
+      case 0:
+      {
+        L_Target_Speed=20;
+        L_Target_Position=-30;
+        flag=0;
+        if(One_Sensor1)
+        {					
+          topic=1;		
+        }
+      }break;
+      // 识别黑线，先调整角度 
+      case 1:
+      {       
+        L_Target_Speed=5;			
+        L_Target_Position=0;  
+        if((int16_t)yawl==0)
+        {
+            topic=2;
+        }
+      }break;
+      //第一次进入圆环，当全为白色，调整角度，直行
+      case 2:
+      {       
+        flag=1;       // 进入寻迹环      
+        if(All_Sensor1) 
+        {
+          flag=0;
+          L_Target_Speed=20;
+          L_Target_Position=-147;//调整角度
+          topic=3;
+        }
+      }break;
+      //当识别到黑线，第二次进入圆环
+      case 3:
+      {
+        if(One_Sensor1)
+        {
+          L_Target_Speed=20;
+          flag=1;        //寻迹环
+          topic=4;
+        }
+
+        // if(All_Sensor1)
+        // {
+        //   flag=0;
+        //   L_Target_Position=-173;
+        // }
+        // three_prosses=3;
+      }break;
+    } 
+  }
+}
 /* USER CODE END 4 */
 
 /**
