@@ -76,24 +76,24 @@ void eight(void);
 /* USER CODE BEGIN 0 */
 //板子上的电机2的PID控制�?
 PID_Controller left_pid = {
-    .p=235.0f,
-    .i=13.0f
+    .p=160.0f,
+    .i=18.0f
 }; 
 //板子上的电机1的PID控制�?
 PID_Controller right_pid = {
-    .p=235.0f,
-    .i=13.0f
+    .p=160.0f,
+    .i=18.0f
 }; 
 //直走pid控制�?
 PID_Controller yaw_pid={
     .p=1.0f,
-    .d=1.4f
+    .d=1.5f
   };
 //寻迹pid控制�?  
 PID_Controller track_pid_assignment={
 //	.p=2.0f
     .p=3.0f,
-    .d=5.5f	
+    .d=5.5f,	
 };
 __IO uint8_t InitOK = 0;
 //串口重定�?
@@ -207,12 +207,20 @@ int main(void)
 
  //L_Target_Position=30;
   
-
+//		L_Target_Speed=0;
 
   while (1)
   { 
-    // flag=3;
+//			Track_follow();
+
+    flag=3;
     if(key_pd[0].keys_flag==1){three(); key_pd[0].keys_flag=0; } 
+//		if(One_Sensor1) {L_Target_Speed=0;}
+
+//		HAL_Delay(1000);
+//		L_Target_Speed=0;
+//		HAL_Delay(1000);
+		
    
 //    else if(key_pd[1].keys_flag==0){OLED_ShowString(1,1,"stop  ");flag=3;Load(0,0); }
  
@@ -220,11 +228,8 @@ int main(void)
 		
 //    Track_follow(); 
 //    Read();  
-    gyro_Z = getGyroZ(); 
     OLED_ShowString(2,1,"yaw:");
 	  OLED_ShowSignedNum(2,5,yawl,3);
-    if(rawGyroZ>=0){OLED_ShowString(3,1,"0");OLED_ShowSignedNum(3,5,rawGyroZ,6);}
-    if(rawGyroZ<0){OLED_ShowString(3,1,"1");OLED_ShowSignedNum(3,5,-rawGyroZ,6);}
 //	  OLED_ShowSignedNum(3,0,key_pd[0].keys_flag,3);
 //	  OLED_ShowSignedNum(3,5,key_pd[1].keys_flag,3);
 //	  OLED_ShowSignedNum(4,0,key_pd[2].keys_flag,3);
@@ -329,9 +334,9 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
       DataBuff[RxLine-1]=RxBuffer[0];  //把每次接收到的数据保存到缓存数组
       if(RxBuffer[0]==0x21)            //接收结束标志位，这个数据可以自定义，根据实际�?求，这里只做示例使用，不�?定是0x21
       {
-          printf("RXLen=%d\r\n",RxLine);
+//          printf("RXLen=%d\r\n",RxLine);
           for(int i=0;i<RxLine;i++)
-              printf("UART DataBuff[%d] = %c\r\n",i,DataBuff[i]);
+//              printf("UART DataBuff[%d] = %c\r\n",i,DataBuff[i]);
           USART_PID_Adjust(1);//数据解析和参数赋值函�?
           memset(DataBuff,0,sizeof(DataBuff));  //清空缓存数组
           RxLine=0;  //清空接收长度
@@ -355,15 +360,16 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	Encoder1=-Read_Speed(&htim2);
 	Encoder2=Read_Speed(&htim3);  
 	
-	Encoder2=0.6*Encoder2+0.4*Encoder2_last;
-	Encoder1=0.6*Encoder1+0.4*Encoder1_last;
-	
+	Encoder2=0.8*Encoder2+0.2*Encoder2_last;
+	Encoder1=0.8*Encoder1+0.2*Encoder1_last;
+//	
   if(flag==0)steering_ring();		//标志位为0，判断为转向环					
   else if(flag==1)Track_ring();		//标志位为1，判断为寻迹环
+//	
 	Encoder2_last=Encoder2;
 	Encoder1_last=Encoder1;
-  
-//获取BNO085传感器数据  
+//  
+////获取BNO085传感器数据  
 	if ( dataAvailable() )
   {
       q0 = getQuatReal();
@@ -378,7 +384,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   key_pd[1].keys_read = HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_1); // 读取PIN_1的状态
   key_pd[2].keys_read = HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_2); // 读取PIN_2的状态
   key_pd[3].keys_read = HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_3); // 读取PIN_3的状态
-
+  
   // 遍历key_pd数组中的每个按键，检查其状态并更新相应的进度和标志位
   for (int8_t i = 0; i < 4; i++) // 循环变量i从0开始，直到小于4（即遍历key_pd数组的前4个元素）
   {
@@ -508,8 +514,8 @@ void Track_ring(void)
 	track_turn=track_pid(&track_pid_assignment,track_sum);
 	
   
-  track_left=(int16_t)pid1(&left_pid,Encoder2,20-track_turn);//
-  track_right=(int16_t)pid1(&right_pid,Encoder1,20+track_turn);//
+  track_left=(int16_t)pid1(&left_pid,Encoder2,30-track_turn);//
+  track_right=(int16_t)pid1(&right_pid,Encoder1,30+track_turn);//
   
 	
 	if(track_left>7200)track_left=7200;
@@ -545,23 +551,25 @@ void three(void)
 {
   while(1)
   {
-    Track_follow();
     static uint8_t three_prosses=0;     //分成四部分
 //    uint8_t black_cnt=0;        // 存储进入圆环次数  
     OLED_ShowSignedNum(2,5,yawl,3);
+    OLED_ShowSignedNum(3,5,three_prosses,3);
+//    OLED_ShowSignedNum(3,5,L_Target_Position,3);
+//    OLED_ShowSignedNum(4,5,pid_turn,3);
 //		OLED_ShowSignedNum(1,5,One_Sensor1,3);
 //		OLED_ShowSignedNum(3,5,L_Target_Position,3);
 //		OLED_ShowSignedNum(4,5,three_prosses,3);
 		
 //    if(flag!=3){L_Target_Speed = 20;}  
-      	
+     Track_follow();
     switch(three_prosses)
     {		
       //直行，调整角度，向圆环	
       case 0:
       {
-				L_Target_Speed=20;
-				L_Target_Position=-33;
+				L_Target_Speed=30;
+				L_Target_Position=-38;
 				flag=0;
 				if(One_Sensor1)
 				{					
@@ -583,38 +591,31 @@ void three(void)
       case 2:
       {       
         flag=1;       // 进入寻迹环      
-				if(All_Sensor1) 
+				if(All_Sensor1) //出寻迹环
 				{
              three_prosses=3;
 				}
       }break;
-      //当识别到黑线，第二次进入圆环
       case 3:
       {
-        L_Target_Speed=20; 
-        L_Target_Position=-143;//调整角度
-        if(yawl>0)
-        {
-          yawl=-yawl;
-        }     
+        L_Target_Speed=30; 
+				L_Target_Position=-143;//调整角度
+        
         flag=0;
         if(One_Sensor1)
         {          
           flag=1;        //寻迹环
           three_prosses=4;
         }
-
-        // if(All_Sensor1)
-        // {
-        //   flag=0;
-        //   L_Target_Position=-173;
-        // }
-        // three_prosses=3;
       }break;
       //识别到全白，停止
       case 4:
       {
-        if(All_Sensor1)
+				if(All_Sensor1 && yawl<-130 && yawl>-179)
+				{
+					track_sum=-4;
+				}
+        if(All_Sensor1 && yawl <30 &&  yawl>-30)
         {
           // L_Target_Position=0;
           L_Target_Speed=0;
@@ -625,6 +626,7 @@ void three(void)
       }break;
       case 5:
       {
+				flag=3;
         Load(0,0);
       }
     } 
