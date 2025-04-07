@@ -1,0 +1,62 @@
+T7BD4 000:005.966   SEGGER J-Link V7.82 Log File
+T7BD4 000:006.083   DLL Compiled: Oct 13 2022 13:32:51
+T7BD4 000:006.086   Logging started @ 2025-03-30 06:08
+T7BD4 000:006.090 - 6.091ms
+T7BD4 000:006.097 JLINK_SetWarnOutHandler(...)
+T7BD4 000:006.102 - 0.006ms
+T7BD4 000:006.107 JLINK_OpenEx(...)
+T7BD4 000:008.021   Firmware: J-Link ARM-OB STM32 compiled Aug 22 2012 19:52:04
+T7BD4 000:008.489   Firmware: J-Link ARM-OB STM32 compiled Aug 22 2012 19:52:04
+T7BD4 000:011.666   Hardware: V7.00
+T7BD4 000:011.693   S/N: 4294967295
+T7BD4 000:011.698   OEM: SEGGER
+T7BD4 000:011.702   Feature(s): None
+T7BD4 000:013.097   TELNET listener socket opened on port 19021
+T7BD4 000:013.173   WEBSRV WEBSRV_Init(): Starting webserver thread(s)
+T7BD4 000:013.307   WEBSRV Webserver running on local port 19080
+T7BD4 000:016.835 - 10.740ms returns "O.K."
+T7BD4 000:016.871 JLINK_GetEmuCaps()
+T7BD4 000:016.876 - 0.006ms returns 0x88EA5833
+T7BD4 000:016.888 JLINK_TIF_GetAvailable(...)
+T7BD4 000:017.256 - 0.375ms
+T7BD4 000:017.269 JLINK_SetErrorOutHandler(...)
+T7BD4 000:017.273 - 0.005ms
+T7BD4 000:017.290 JLINK_ExecCommand("ProjectFile = "D:\ti\mspm0_sdk_1_30_00_03\mspm0g3507_20240729\keil\JLinkSettings.ini"", ...). 
+T7BD4 000:026.258 - 8.976ms returns 0x00
+T7BD4 000:030.327 JLINK_ExecCommand("Device = MSPM0G3507", ...). 
+T7BD4 000:033.700   Device "MSPM0G3507" selected.
+T7BD4 000:033.967 - 3.632ms returns 0x00
+T7BD4 000:033.980 JLINK_ExecCommand("DisableConnectionTimeout", ...). 
+T7BD4 000:033.990 - 0.002ms returns 0x01
+T7BD4 000:033.995 JLINK_GetHardwareVersion()
+T7BD4 000:033.998 - 0.005ms returns 70000
+T7BD4 000:034.006 JLINK_GetDLLVersion()
+T7BD4 000:034.009 - 0.004ms returns 78200
+T7BD4 000:034.013 JLINK_GetOEMString(...)
+T7BD4 000:034.017 JLINK_GetFirmwareString(...)
+T7BD4 000:034.021 - 0.005ms
+T7BD4 000:044.760 JLINK_GetDLLVersion()
+T7BD4 000:044.774 - 0.016ms returns 78200
+T7BD4 000:044.779 JLINK_GetCompileDateTime()
+T7BD4 000:044.783 - 0.005ms
+T7BD4 000:047.879 JLINK_GetFirmwareString(...)
+T7BD4 000:047.892 - 0.014ms
+T7BD4 000:052.004 JLINK_GetHardwareVersion()
+T7BD4 000:052.019 - 0.017ms returns 70000
+T7BD4 000:055.027 JLINK_GetSN()
+T7BD4 000:055.040 - 0.015ms returns -1
+T7BD4 000:055.045 JLINK_GetOEMString(...)
+T7BD4 000:058.150 JLINK_TIF_Select(JLINKARM_TIF_JTAG)
+T7BD4 000:060.429 - 2.285ms returns 0x00
+T7BD4 000:060.440 JLINK_HasError()
+T7BD4 000:060.455 JLINK_SetSpeed(5000)
+T7BD4 000:060.697 - 0.243ms
+T7BD4 000:060.703 JLINK_GetIdData(pIdData)
+T7BD4 000:066.501   Could not measure total IR len. TDO is constant high.
+T7BD4 000:070.452   Failed to identify target. Resetting via Reset pin and trying again.
+T7BD4 000:229.567   Could not measure total IR len. TDO is constant high.
+T7BD4 000:230.253 - 169.555ms
+T7BD4 001:384.658 JLINK_Close()
+T7BD4 001:391.047 - 6.419ms
+T7BD4 001:391.079   
+T7BD4 001:391.083   Closed
