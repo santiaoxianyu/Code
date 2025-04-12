@@ -73,6 +73,8 @@
 ".\objects\grayscale.o"
 ".\objects\beepledtips.o"
 ".\objects\control.o"
+".\objects\pid_2.o"
+".\objects\vofa.o"
 --library_type=microlib --strict --scatter ".\mspm0g3507.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

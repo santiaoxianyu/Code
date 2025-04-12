@@ -8,6 +8,11 @@
 #include "us100.h"
 #include "vision.h"
 #include "nuart.h"
+#include "vofa.h"
+
+uint8_t RxBuffer[1];//串口接收缓冲
+uint8_t RxLine = 0;//指令长度
+extern uint8_t DataBuff[200];//指令内容
 
 void usart_irq_config(void)
 {
@@ -36,15 +41,41 @@ void usart_irq_config(void)
 //}
 
 
+//void UART_1_INST_IRQHandler(void)
+//{
+//  if(DL_UART_getEnabledInterruptStatus(UART_1_INST,DL_UART_INTERRUPT_RX) == DL_UART_INTERRUPT_RX)
+//  {
+//		uint8_t ch = DL_UART_receiveData(UART_1_INST);
+//		SDK_Data_Receive_Prepare_1(ch);
+//		DL_UART_clearInterruptStatus(UART_1_INST,DL_UART_INTERRUPT_RX);//清除中断标志位
+//  }
+//}
+
+
+
 void UART_1_INST_IRQHandler(void)
 {
   if(DL_UART_getEnabledInterruptStatus(UART_1_INST,DL_UART_INTERRUPT_RX) == DL_UART_INTERRUPT_RX)
   {
-		uint8_t ch = DL_UART_receiveData(UART_1_INST);
-		SDK_Data_Receive_Prepare_1(ch);
+		RxBuffer[0] = DL_UART_receiveData(UART_1_INST);
+    RxLine++;                      //每接收到??个数据，进入回调数据长度??1
+    DataBuff[RxLine-1]=RxBuffer[0];  //把每次接收到的数据保存到缓存数组
+      if(RxBuffer[0]==0x21)            //接收结束标志位，这个数据可以自定义，根据实际??求，这里只做示例使用，不??定是0x21
+      {
+//          printf("RXLen=%d\r\n",RxLine);
+//          for(int i=0;i<RxLine;i++)
+//              printf("UART DataBuff[%d] = %c\r\n",i,DataBuff[i]);
+          USART_PID_Adjust(1);//数据解析和参数赋值函??
+          memset(DataBuff,0,sizeof(DataBuff));  //清空缓存数组
+          RxLine=0;  //清空接收长度
+      }
+      RxBuffer[0]=0;	
 		DL_UART_clearInterruptStatus(UART_1_INST,DL_UART_INTERRUPT_RX);//清除中断标志位
   }
 }
+
+
+
 
 systime uart2_dma_t;
 void UART_2_INST_IRQHandler(void)

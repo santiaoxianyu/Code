@@ -59,8 +59,65 @@ float speed_right,speed_left;
 
 extern float Pitch,Roll,Yaw;
 
+void steering_ring(void);//转向�?
+void Track_ring(void);//寻迹�?
+void one_topic(void);
+void two_topic(void);
+void three(void);
+void four_topic(void);
+void Load(int16_t left_pwm1, int16_t right_pwm1);
+
+
+//转向环变�?
+int16_t flag;
+int16_t straight_right;
+int16_t straight_left;
+int16_t pid_turn;
+extern unsigned int  rawGyroZ;
+
+//寻迹环变�?
+int16_t track_turn,track_left,track_right;
+//编码器�?�电�?
+uint32_t sys_tick; 
+int Encoder1,Encoder2;
+int Encoder1_last,Encoder2_last;
+int16_t left,right,left_last,right_last;
+int16_t L_Target_Position, L_Target_Speed;
+extern int8_t track_sum;
+//�?螺仪1
+//float yaww,yawl,yaw_init,yaw_out;
+//int Init_Angle_Flag=1;
+//float q0, q1, q2, q3;
+//float roll, pitch, yaw;
+extern int8_t track_assignment[12];
+
+//float gyro_Z ;
+//板子上的电机2的PID控制�?
+PID_Controller left_pid = {
+    .p=160.0f,
+    .i=18.0f
+}; 
+//板子上的电机1的PID控制�?
+PID_Controller right_pid = {
+    .p=160.0f,
+    .i=18.0f
+}; 
+//直走pid控制�?
+PID_Controller yaw_pid={
+    .p=1.0f,
+    .d=1.5f
+  };
+//寻迹pid控制�?  
+PID_Controller track_pid_assignment={
+//	.p=2.0f
+    .p=3.0f,
+    .d=5.5f,	
+};
+
+
 int main(void)
 {
+	
 	usart_irq_config();     //串口中断配置
   SYSCFG_DL_init();	      //系统资源配置初始化	
 	OLED_Init();						//显示屏初始化
@@ -77,12 +134,13 @@ int main(void)
 	
   while(1)
   {
-		
+//		DL_UART_Main_transmitDataBlocking(UART_1_INST,1);
+		SendDataToVOFA(30,speed_left,speed_right);
 		display_6_8_number(1 ,1,Yaw);
-//		display_6_8_number(1 ,2,Roll);
-//		display_6_8_number(1 ,3,Pitch);
-//		display_6_8_number(1 ,5,speed_right);
-//		display_6_8_number(1 ,6,speed_left);
+		display_6_8_number(1 ,2,Roll);
+		display_6_8_number(1 ,3,Pitch);
+		display_6_8_number(1 ,5,speed_right);
+		display_6_8_number(1 ,6,track_sum);
   }
 }
 
@@ -102,9 +160,9 @@ void maple_duty_200hz(void)
 {
 ////============================================此处编写5ms中断代码=========================================////
 
-		speed_right=get_right_motor_speed();//获取编码器值
-		speed_left=get_left_motor_speed();//获取编码器值
-
+		speed_left=get_right_motor_speed();//获取编码器值
+	  speed_right=get_left_motor_speed();//获取编码器值
+//    DL_GPIO_setPins(GPIOA,DL_GPIO_PIN_27);
 
 	
 	
@@ -146,8 +204,8 @@ void duty_100hz(void)
 ////============================================此处编写10ms中断代码=========================================////
 	
 	
-
-		PWM_Output(3000,0,0,3000);	
+//  DL_GPIO_setPins(GPIOA,DL_GPIO_PIN_27);
+	PWM_Output(0,3000,0,0);	
 
 	
 ////============================================此处编写10ms中断代码=========================================////
@@ -174,6 +232,148 @@ void duty_10hz(void)
 	
 ////============================================此处编写100ms中断代码=========================================////
 }
+
+void steering_ring(void)//转向�?
+{              
+	pid_turn=turn_PID_yaw(&yaw_pid,Yaw,L_Target_Position);
+
+	straight_right=(int16_t)pid1(&right_pid,Encoder1,L_Target_Speed+pid_turn);//
+	straight_left=(int16_t)pid1(&left_pid,Encoder2,L_Target_Speed-pid_turn);//
+
+	if(straight_right>7200)straight_right=7200;
+	if(straight_left>7200)straight_left=7200;	
+	if(straight_right<-7200)straight_right=-7200;
+	if(straight_left<-7200)straight_left=-7200;	
+
+	Load(straight_left,straight_right);
+}
+void Track_ring(void)
+{
+	track_turn=track_pid(&track_pid_assignment,track_sum);
+	
+  
+  track_left=(int16_t)pid1(&left_pid,Encoder2,30-track_turn);//
+  track_right=(int16_t)pid1(&right_pid,Encoder1,30+track_turn);//
+  
+	
+	if(track_left>7200)track_left=7200;
+	if(track_right>7200)track_right=7200;	
+	if(track_right<-7200)track_right=-7200;
+	if(track_left<-7200)track_left=-7200;	
+	
+	Load(track_left,track_right);
+}
+void Load(int16_t left_pwm1, int16_t right_pwm1)
+{
+    // 处理左轮方向
+    int16_t left_forward = (left_pwm1 > 0) ? left_pwm1 : 0;
+    int16_t left_backward = (left_pwm1 < 0) ? -left_pwm1 : 0;
+
+    // 处理右轮方向
+    int16_t right_forward = (right_pwm1 > 0) ? right_pwm1 : 0;
+    int16_t right_backward = (right_pwm1 < 0) ? -right_pwm1 : 0;
+
+    // 调用PWM输出函数，参数顺序：
+    // 左前进，左后退，右后退，右前进
+//    PWM_Output(left_forward, 
+//              left_backward,
+//              right_backward,
+//              right_forward);
+	
+    PWM_Output(right_backward, 
+              right_forward,
+              left_forward,
+              left_backward);
+	
+}
+void three(void)
+{
+  while(1)
+  {
+    static uint8_t three_prosses=0;     //分成四部分
+//    uint8_t black_cnt=0;        // 存储进入圆环次数  
+    display_6_8_number(1 ,1,Yaw);
+//    OLED_ShowSignedNum(3,5,three_prosses,3);
+//    OLED_ShowSignedNum(3,5,L_Target_Position,3);
+//    OLED_ShowSignedNum(4,5,pid_turn,3);
+//		OLED_ShowSignedNum(1,5,One_Sensor1,3);
+//		OLED_ShowSignedNum(3,5,L_Target_Position,3);
+//		OLED_ShowSignedNum(4,5,three_prosses,3);
+		
+//    if(flag!=3){L_Target_Speed = 20;}  
+     Track_follow();
+    switch(three_prosses)
+    {		
+      //直行，调整角度，向圆环	
+      case 0:
+      {
+				L_Target_Speed=30;
+				L_Target_Position=-38;
+				flag=0;
+				if(One_Sensor1)
+				{					
+           three_prosses=1;		
+				}
+      }break;
+       // 识别黑线，先调整角度 
+      case 1:
+      {       
+         L_Target_Speed=0;			
+         L_Target_Position=0; 
+
+         if((int16_t)Yaw==0)
+				 {
+						three_prosses=2;
+				 }
+      }break;
+      //第一次进入圆环，当全为白色，调整角度，直行
+      case 2:
+      {       
+        flag=1;       // 进入寻迹环      
+				if(All_Sensor1) //出寻迹环
+				{
+             three_prosses=3;
+				}
+      }break;
+      case 3:
+      {
+        L_Target_Speed=30; 
+				L_Target_Position=-143;//调整角度
+        
+        flag=0;
+        if(One_Sensor1)
+        {          
+          flag=1;        //寻迹环
+          three_prosses=4;
+        }
+      }break;
+      //识别到全白，停止
+      case 4:
+      {
+				if(All_Sensor1 && Yaw<-130 && Yaw>-179)
+				{
+					track_sum=-4;
+				}
+        if(All_Sensor1 && Yaw <30 &&  Yaw>-30)
+        {
+          // L_Target_Position=0;
+          L_Target_Speed=0;
+          pid_turn=0;
+          flag=0;
+          three_prosses=5;
+        }
+      }break;
+      case 5:
+      {
+				flag=3;
+        Load(0,0);
+      }
+    } 
+    
+    // if(key_pd[1].keys_read==0){OLED_ShowString(1,1,"stop  ");flag=3;Load(0,0);break; }  
+  }
+}
+
 
 //================================师兄的变量================================================//
 extern int32_t _encoder_l_count ;

@@ -315,7 +315,7 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>4</Optim>
+            <Optim>1</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
@@ -341,7 +341,7 @@
               <MiscControls></MiscControls>
               <Define>__MSPM0G3507__</Define>
               <Undefine></Undefine>
-              <IncludePath>..\source\third_party\CMSIS\Core\Include;..\source;..\;..\driver;..\user;..\apply;..\apply\developer;..\apply\Fusion;..\NewCode</IncludePath>
+              <IncludePath>..\source\third_party\CMSIS\Core\Include;..\source;..\;..\driver;..\user;..\apply;..\apply\developer;..\apply\Fusion;..\NewCode;..\..\mspm0g3507_20240729</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -879,6 +879,26 @@
               <FileName>Control.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\NewCode\Control.h</FilePath>
+            </File>
+            <File>
+              <FileName>pid_2.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\NewCode\pid_2.c</FilePath>
+            </File>
+            <File>
+              <FileName>pid_2.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\NewCode\pid_2.h</FilePath>
+            </File>
+            <File>
+              <FileName>vofa.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\NewCode\vofa.c</FilePath>
+            </File>
+            <File>
+              <FileName>vofa.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\NewCode\vofa.h</FilePath>
             </File>
           </Files>
         </Group>

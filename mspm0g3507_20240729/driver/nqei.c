@@ -282,7 +282,7 @@ void QEI0_IRQHandler(void)
 			sum=x+y+z;//求和判断转动方向，偶数正转，奇数反转
 			if(sum==0||sum==2) _encoder_l_count++;
 			else _encoder_l_count--;
-			Get_Encoder_countA1=_encoder_l_count*0.001;
+			Get_Encoder_countA1=_encoder_l_count;
 			DL_GPIO_clearInterruptStatus(GPIOB, PORTB_RIGHT_PULSE_PIN);
 		}
 		
@@ -299,7 +299,7 @@ void QEI0_IRQHandler(void)
 			sum=x+y+z;//求和判断转动方向，偶数正转，奇数反转
 			if(sum==0||sum==2) _encoder_l_count++;
 			else _encoder_l_count--;
-			Get_Encoder_countA1=_encoder_l_count*0.001;
+			Get_Encoder_countA1=_encoder_l_count;
 			DL_GPIO_clearInterruptStatus(GPIOB, PORTB_RIGHT_DIR_PIN);
 		}
 		
@@ -554,7 +554,7 @@ float get_right_motor_speed(void)
 	{
 		//float temp;
 		cnt2=0;
-//		NEncoder.right_motor_period_ms=20;
+		NEncoder.right_motor_period_ms=20;
 //		//将速度转化成转每分钟
 ////		NEncoder.right_motor_speed_rpm=60*(NEncoder.right_motor_period_cnt*1.0f/trackless_motor.pulse_num_per_circle)
 ////																	/(NEncoder.right_motor_period_ms*0.001f);

@@ -35,6 +35,7 @@
 #include "datatype.h"
 #include "main.h"
 
+#include "ti_msp_dl_config.h"
 
 /*********************************************************/
 #include "wp_math.h"
@@ -77,7 +78,9 @@
 #include "mission.h"
 #include "grayscale.h"
 #include "BeepLedTips.h"
-
+#include "pid.h"
+#include "pid_2.h"
+#include "vofa.h"
 
 
 

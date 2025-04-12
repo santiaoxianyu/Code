@@ -80,4 +80,5 @@
   ..\apply\developer\subtask.h ..\apply\developer\developer_mode.h \
   ..\apply\nclink.h ..\driver\bno08x.h ..\driver\drv_imu.h \
   ..\driver\bsp_mpu6050.h ..\driver\inv_mpu.h ..\NewCode\mission.h \
-  ..\NewCode\grayscale.h ..\NewCode\BeepLedTips.h ..\apply\user.h
+  ..\NewCode\grayscale.h ..\NewCode\BeepLedTips.h ..\NewCode\pid_2.h \
+  ..\NewCode\vofa.h ..\apply\user.h

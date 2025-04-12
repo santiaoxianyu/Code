@@ -41,6 +41,7 @@
 #define ti_msp_dl_config_h
 
 #define CONFIG_MSPM0G350X
+#define CONFIG_MSPM0G3507
 
 #if defined(__ti_version__) || defined(__TI_COMPILER_VERSION__)
 #define SYSCONFIG_WEAK __attribute__((weak))
@@ -190,6 +191,7 @@ extern "C" {
 
 /* Defines for UART_0 */
 #define UART_0_INST                                                        UART0
+#define UART_0_INST_FREQUENCY                                           40000000
 #define UART_0_INST_IRQHandler                                  UART0_IRQHandler
 #define UART_0_INST_INT_IRQN                                      UART0_INT_IRQn
 #define GPIO_UART_0_RX_PORT                                                GPIOA
@@ -205,6 +207,7 @@ extern "C" {
 #define UART_0_FBRD_40_MHZ_9600_BAUD                                        (27)
 /* Defines for UART_1 */
 #define UART_1_INST                                                        UART1
+#define UART_1_INST_FREQUENCY                                           40000000
 #define UART_1_INST_IRQHandler                                  UART1_IRQHandler
 #define UART_1_INST_INT_IRQN                                      UART1_INT_IRQn
 #define GPIO_UART_1_RX_PORT                                                GPIOA
@@ -215,11 +218,12 @@ extern "C" {
 #define GPIO_UART_1_IOMUX_TX                                     (IOMUX_PINCM19)
 #define GPIO_UART_1_IOMUX_RX_FUNC                      IOMUX_PINCM20_PF_UART1_RX
 #define GPIO_UART_1_IOMUX_TX_FUNC                      IOMUX_PINCM19_PF_UART1_TX
-#define UART_1_BAUD_RATE                                                (256000)
-#define UART_1_IBRD_40_MHZ_256000_BAUD                                       (9)
-#define UART_1_FBRD_40_MHZ_256000_BAUD                                      (49)
+#define UART_1_BAUD_RATE                                                  (9600)
+#define UART_1_IBRD_40_MHZ_9600_BAUD                                       (260)
+#define UART_1_FBRD_40_MHZ_9600_BAUD                                        (27)
 /* Defines for UART_2 */
 #define UART_2_INST                                                        UART2
+#define UART_2_INST_FREQUENCY                                           40000000
 #define UART_2_INST_IRQHandler                                  UART2_IRQHandler
 #define UART_2_INST_INT_IRQN                                      UART2_INT_IRQn
 #define GPIO_UART_2_RX_PORT                                                GPIOA
@@ -235,6 +239,7 @@ extern "C" {
 #define UART_2_FBRD_40_MHZ_9600_BAUD                                        (27)
 /* Defines for UART_3 */
 #define UART_3_INST                                                        UART3
+#define UART_3_INST_FREQUENCY                                           80000000
 #define UART_3_INST_IRQHandler                                  UART3_IRQHandler
 #define UART_3_INST_INT_IRQN                                      UART3_INT_IRQn
 #define GPIO_UART_3_RX_PORT                                                GPIOB
@@ -278,7 +283,7 @@ extern "C" {
 #define ADC12_0_INST_INT_IRQN                                    (ADC0_INT_IRQn)
 #define ADC12_0_ADCMEM_1                                      DL_ADC12_MEM_IDX_1
 #define ADC12_0_ADCMEM_1_REF                     DL_ADC12_REFERENCE_VOLTAGE_VDDA
-#define ADC12_0_ADCMEM_1_REF_VOLTAGE                                          -1 // VDDA cannot be determined
+#define ADC12_0_ADCMEM_1_REF_VOLTAGE_V                                       3.3
 #define GPIO_ADC12_0_C1_PORT                                               GPIOA
 #define GPIO_ADC12_0_C1_PIN                                       DL_GPIO_PIN_26
 
@@ -287,7 +292,6 @@ extern "C" {
 /* Defines for DMA_CH0 */
 #define DMA_CH0_CHAN_ID                                                      (0)
 #define UART_2_INST_DMA_TRIGGER                              (DMA_UART2_TX_TRIG)
-
 
 
 /* Port definition for Pin Group KEYA */

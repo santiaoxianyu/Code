@@ -69,4 +69,16 @@
   F:\d\keil5\core\ARM\ARMCLANG\Bin\..\include\string.h \
   F:\d\keil5\core\ARM\ARMCLANG\Bin\..\include\math.h ..\driver\system.h \
   ..\apply\motor_control.h ..\apply\sensor.h ..\apply\nclink.h \
-  ..\driver\us100.h ..\apply\vision.h ..\driver\nuart.h
+  ..\driver\us100.h ..\apply\vision.h ..\driver\nuart.h \
+  ..\NewCode\vofa.h ..\user\headfile.h ..\user\main.h ..\apply\wp_math.h \
+  ..\apply\filter.h ..\apply\pid.h ..\driver\ntimer.h ..\driver\npwm.h \
+  ..\driver\nppm.h ..\driver\nqei.h ..\driver\nadc.h ..\driver\oled.h \
+  ..\driver\ssd1306.h ..\driver\ni2c.h ..\driver\neeprom.h \
+  ..\driver\w25qxx.h ..\apply\rc.h ..\driver\nbutton.h ..\driver\ngpio.h \
+  ..\apply\rgb.h ..\driver\icm20608.h ..\apply\gray_detection.h \
+  ..\apply\self_balancing.h ..\apply\attitude_selfstable.h ..\apply\ui.h \
+  ..\apply\sdk.h ..\apply\developer\subtask.h \
+  ..\apply\developer\developer_mode.h ..\driver\bno08x.h \
+  ..\driver\drv_imu.h ..\driver\bsp_mpu6050.h ..\driver\inv_mpu.h \
+  ..\NewCode\mission.h ..\NewCode\grayscale.h ..\NewCode\BeepLedTips.h \
+  ..\NewCode\pid_2.h

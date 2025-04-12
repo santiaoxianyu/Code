@@ -14,7 +14,7 @@
 #define X_WIDTH 	128
 #define Y_WIDTH 	64
 
-#define  OLED_WORK_MODE_I2C//OLED使用I2C模式驱动，当采用SPI模式时，注释本行即可
+//#define  OLED_WORK_MODE_I2C//OLED使用I2C模式驱动，当采用SPI模式时，注释本行即可
 
 
 
