@@ -51,7 +51,7 @@
 
 #include "ti_msp_dl_config.h"
 #include "headfile.h"
-
+#include "stdio.h"
 short yaw;
 short angle;
 
@@ -61,13 +61,11 @@ extern float Pitch,Roll,Yaw;
 
 void steering_ring(void);//转向�?
 void Track_ring(void);//寻迹�?
-void one_topic(void);
-void two_topic(void);
+void one(void);
+void two(void);
 void three(void);
-void four_topic(void);
+void four(void);
 void Load(int16_t left_pwm1, int16_t right_pwm1);
-
-
 //转向环变�?
 int16_t flag;
 int16_t straight_right;
@@ -84,6 +82,7 @@ int Encoder1_last,Encoder2_last;
 int16_t left,right,left_last,right_last;
 int16_t L_Target_Position, L_Target_Speed;
 extern int8_t track_sum;
+extern int8_t B1_put,B2_put,B3_put,B4_put;
 //�?螺仪1
 //float yaww,yawl,yaw_init,yaw_out;
 //int Init_Angle_Flag=1;
@@ -118,7 +117,7 @@ PID_Controller track_pid_assignment={
 int main(void)
 {
 	
-	usart_irq_config();     //串口中断配置
+//	usart_irq_config();     //串口中断配置0x00001000
   SYSCFG_DL_init();	      //系统资源配置初始化	
 	OLED_Init();						//显示屏初始化
 	ctrl_params_init();			//控制参数初始化
@@ -131,16 +130,28 @@ int main(void)
 	gpio_input_init();
 	PPM_Init();							//编码器
 	DL_GPIO_clearPins(PORTA_PORT,PORTA_BEEP_PIN);
-	
+	usart_irq_config();     //串口中断配置0x00001000
+	int s;
   while(1)
   {
-//		DL_UART_Main_transmitDataBlocking(UART_1_INST,1);
+
+		s=Track_follow();
+		DL_UART_Main_transmitDataBlocking(UART_1_INST,1);
 		SendDataToVOFA(30,speed_left,speed_right);
 		display_6_8_number(1 ,1,Yaw);
 		display_6_8_number(1 ,2,Roll);
 		display_6_8_number(1 ,3,Pitch);
 		display_6_8_number(1 ,5,speed_right);
-		display_6_8_number(1 ,6,track_sum);
+		display_6_8_number(1 ,6,s);
+		
+		if(B1_put==1){display_6_8_number(1,4,1);DL_GPIO_setPins(KEYB_PORT,PORTB_D3_5_PIN);}
+		else if(B1_put==0){display_6_8_number(1,4,0);DL_GPIO_clearPins(KEYB_PORT,PORTB_D3_5_PIN);}
+//		if(B2_put==1){display_6_8_number(8,4,2);}
+//		else if(B2_put==0){display_6_8_number(8,4,0);}
+//		if(B3_put==1){display_6_8_number(15,4,3);}
+//		else if(B3_put==0){display_6_8_number(15,4,0);}		
+//		if(B4_put==1){display_6_8_number(22,4,4);}
+//		else if(B4_put==0){display_6_8_number(22,4,0);}		
   }
 }
 
@@ -162,6 +173,9 @@ void maple_duty_200hz(void)
 
 		speed_left=get_right_motor_speed();//获取编码器值
 	  speed_right=get_left_motor_speed();//获取编码器值
+		button_scan();//按键
+	  if(flag==0)steering_ring();		//标志位为0，判断为转向环					
+		else if(flag==1)Track_ring();		//标志位为1，判断为寻迹环
 //    DL_GPIO_setPins(GPIOA,DL_GPIO_PIN_27);
 
 	
@@ -205,7 +219,7 @@ void duty_100hz(void)
 	
 	
 //  DL_GPIO_setPins(GPIOA,DL_GPIO_PIN_27);
-	PWM_Output(0,3000,0,0);	
+//	PWM_Output(0,3000,0,0);	
 
 	
 ////============================================此处编写10ms中断代码=========================================////
@@ -233,6 +247,7 @@ void duty_10hz(void)
 ////============================================此处编写100ms中断代码=========================================////
 }
 
+
 void steering_ring(void)//转向�?
 {              
 	pid_turn=turn_PID_yaw(&yaw_pid,Yaw,L_Target_Position);
@@ -247,7 +262,7 @@ void steering_ring(void)//转向�?
 
 	Load(straight_left,straight_right);
 }
-void Track_ring(void)
+void Track_ring(void)//寻迹环
 {
 	track_turn=track_pid(&track_pid_assignment,track_sum);
 	
@@ -286,6 +301,66 @@ void Load(int16_t left_pwm1, int16_t right_pwm1)
               left_backward);
 	
 }
+void one(void)
+{
+	L_Target_Speed=30;
+	L_Target_Position=0;
+	while(1)
+	{
+		Track_follow();
+		L_Target_Speed=30;
+		L_Target_Position=0;
+		if(All_Sensor1){L_Target_Speed=0;break;}
+	}
+
+}
+
+void two(void)
+{
+	uint8_t case2;
+	while(1)
+	{
+		Track_follow();
+		switch(case2)
+		{
+			case 0:
+			{
+				L_Target_Speed=30;
+				L_Target_Position=0;
+				flag=0;
+				case2=1;				
+			}break;
+			case 1:
+			{
+				if(One_Sensor1){flag=1;case2=2;}
+			}break;
+			case 2:
+			{
+				if(All_Sensor1){L_Target_Speed=0;L_Target_Position=177;flag=0;case2=3;}
+			}break;
+			case 3:
+			{
+				if(yaw==177){L_Target_Speed=30;L_Target_Position=177;case2=4;}
+			}break;
+			case 4:
+			{
+				if(One_Sensor1){flag=1;case2=5;}
+			}break;
+			case 5:
+			{
+				if(All_Sensor1){L_Target_Speed=0;L_Target_Position=0;flag=3;case2=6;}
+			}break;
+			case 6:
+			{
+				Load(0,0);
+				case2=7;
+			}
+		}
+		if(case2==7){break;}
+	}
+	
+}
+
 void three(void)
 {
   while(1)

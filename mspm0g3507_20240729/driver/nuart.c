@@ -62,9 +62,9 @@ void UART_1_INST_IRQHandler(void)
     DataBuff[RxLine-1]=RxBuffer[0];  //把每次接收到的数据保存到缓存数组
       if(RxBuffer[0]==0x21)            //接收结束标志位，这个数据可以自定义，根据实际??求，这里只做示例使用，不??定是0x21
       {
-//          printf("RXLen=%d\r\n",RxLine);
-//          for(int i=0;i<RxLine;i++)
-//              printf("UART DataBuff[%d] = %c\r\n",i,DataBuff[i]);
+          printf("RXLen=%d\r\n",RxLine);
+          for(int i=0;i<RxLine;i++)
+              printf("UART DataBuff[%d] = %c\r\n",i,DataBuff[i]);
           USART_PID_Adjust(1);//数据解析和参数赋值函??
           memset(DataBuff,0,sizeof(DataBuff));  //清空缓存数组
           RxLine=0;  //清空接收长度

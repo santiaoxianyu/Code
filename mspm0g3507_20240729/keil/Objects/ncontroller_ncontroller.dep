@@ -993,10 +993,10 @@ I (..\source\ti\devices\msp\peripherals\m0p\hw_sysctl.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\peripherals\m0p\sysctl\hw_sysctl_mspm0g1x0x_g3x0x.h)(0x662FCA6A)
 I (..\source\ti\driverlib\m0p\sysctl\dl_sysctl_mspm0g1x0x_g3x0x.h)(0x662FCA6A)
 I (..\source\ti\driverlib\dl_common.h)(0x662FCA6A)
-F (..\source\ti\devices\msp\m0p\startup_system_files\keil\startup_mspm0g350x_uvision.s)(0x67E92F94)(--cpu Cortex-M0+ -g --pd "__MICROLIB SETA 1"--pd "__UVISION_VERSION SETA 537"--pd "__MSPM0G3507__ SETA 1"--list .\listings\startup_mspm0g350x_uvision.lst--xref -o .\objects\startup_mspm0g350x_uvision.o--depend .\objects\startup_mspm0g350x_uvision.d)
+F (..\source\ti\devices\msp\m0p\startup_system_files\keil\startup_mspm0g350x_uvision.s)(0x67FB48E0)(--cpu Cortex-M0+ -g --pd "__MICROLIB SETA 1"--pd "__UVISION_VERSION SETA 537"--pd "__MSPM0G3507__ SETA 1"--list .\listings\startup_mspm0g350x_uvision.lst--xref -o .\objects\startup_mspm0g350x_uvision.o--depend .\objects\startup_mspm0g350x_uvision.d)
 F (..\ncontroller.syscfg)(0x67F92FDF)()
-F (..\user\main.c)(0x67F9C4CC)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/main.o -MD)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+F (..\user\main.c)(0x67FB5374)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/main.o -MD)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -1078,7 +1078,7 @@ I (..\source\ti\driverlib\dl_vref.h)(0x662FCA6A)
 I (..\source\ti\driverlib\dl_wwdt.h)(0x662FCA6A)
 I (..\source\ti\driverlib\m0p\dl_interrupt.h)(0x662FCA6A)
 I (..\source\ti\driverlib\m0p\dl_systick.h)(0x662FCA6A)
-I (..\user\headfile.h)(0x67F7D0FD)
+I (..\user\headfile.h)(0x67FA7198)
 I (..\user\datatype.h)(0x666D0F42)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdio.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdlib.h)(0x625260D6)
@@ -1122,12 +1122,12 @@ I (..\driver\drv_imu.h)(0x6656DB84)
 I (..\driver\bsp_mpu6050.h)(0x67E685C8)
 I (..\driver\inv_mpu.h)(0x67E685C8)
 I (..\NewCode\mission.h)(0x67ED4914)
-I (..\NewCode\grayscale.h)(0x67F539CF)
+I (..\NewCode\grayscale.h)(0x67FA76E3)
 I (..\NewCode\BeepLedTips.h)(0x67EDD9F4)
 I (..\NewCode\pid_2.h)(0x67F525FE)
 I (..\NewCode\vofa.h)(0x67F7D0FD)
 F (..\ti_msp_dl_config.c)(0x67F93010)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/ti_msp_dl_config.o -MD)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -1209,11 +1209,11 @@ I (..\source\ti\driverlib\dl_vref.h)(0x662FCA6A)
 I (..\source\ti\driverlib\dl_wwdt.h)(0x662FCA6A)
 I (..\source\ti\driverlib\m0p\dl_interrupt.h)(0x662FCA6A)
 I (..\source\ti\driverlib\m0p\dl_systick.h)(0x662FCA6A)
-F (..\ti_msp_dl_config.h)(0x67F92FC5)()
+F (..\ti_msp_dl_config.h)(0x67FB4FCB)()
 F (..\user\datatype.h)(0x666D0F42)()
-F (..\user\headfile.h)(0x67F7D0FD)()
+F (..\user\headfile.h)(0x67FA7198)()
 F (..\driver\system.c)(0x66634444)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/system.o -MD)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -1302,7 +1302,7 @@ I (F:\d\keil5\core\ARM\ARMCLANG\include\stdlib.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\string.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\math.h)(0x625260D6)
 F (..\driver\oled.c)(0x67F6582E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/oled.o -MD)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -1404,7 +1404,7 @@ I (F:\d\keil5\core\ARM\ARMCLANG\include\stdint.h)(0x625260D8)
 I (..\driver\oled.h)(0x66697B9E)
 I (..\driver\glcdfont.c)(0x56742638)
 F (..\driver\ntimer.c)(0x67E8F694)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/ntimer.o -MD)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -1494,7 +1494,7 @@ I (F:\d\keil5\core\ARM\ARMCLANG\include\string.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\math.h)(0x625260D6)
 I (..\driver\ntimer.h)(0x6667D8F8)
 F (..\driver\npwm.c)(0x66A7CE3E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/npwm.o -MD)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -1579,7 +1579,7 @@ I (..\source\ti\driverlib\m0p\dl_systick.h)(0x662FCA6A)
 I (..\driver\ntimer.h)(0x6667D8F8)
 I (..\driver\npwm.h)(0x6669BDD6)
 F (..\driver\nqei.c)(0x67F65D1A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/nqei.o -MD)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -1670,7 +1670,7 @@ I (..\driver\system.h)(0x66634338)
 I (..\apply\user.h)(0x637F3A0C)
 I (..\driver\nqei.h)(0x67ECF75C)
 F (..\driver\nppm.c)(0x66A97192)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/nppm.o -MD)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -1762,7 +1762,7 @@ I (..\driver\us100.h)(0x67EA2C42)
 I (..\driver\nqei.h)(0x67ECF75C)
 I (..\driver\nppm.h)(0x6668856E)
 F (..\driver\nadc.c)(0x6669BAA4)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/nadc.o -MD)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -1852,8 +1852,8 @@ I (F:\d\keil5\core\ARM\ARMCLANG\include\math.h)(0x625260D6)
 I (..\driver\ngpio.h)(0x6667B8A6)
 I (..\driver\nadc.h)(0x6669BA54)
 I (..\apply\user.h)(0x637F3A0C)
-F (..\driver\nuart.c)(0x67F7D0FD)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/nuart.o -MD)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+F (..\driver\nuart.c)(0x67FB3CBF)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/nuart.o -MD)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -1948,7 +1948,7 @@ I (..\driver\us100.h)(0x67EA2C42)
 I (..\apply\vision.h)(0x636F26E4)
 I (..\driver\nuart.h)(0x67E95502)
 I (..\NewCode\vofa.h)(0x67F7D0FD)
-I (..\user\headfile.h)(0x67F7D0FD)
+I (..\user\headfile.h)(0x67FA7198)
 I (..\user\main.h)(0x666719DC)
 I (..\apply\wp_math.h)(0x64083DD0)
 I (..\apply\filter.h)(0x64083E44)
@@ -1980,11 +1980,11 @@ I (..\driver\drv_imu.h)(0x6656DB84)
 I (..\driver\bsp_mpu6050.h)(0x67E685C8)
 I (..\driver\inv_mpu.h)(0x67E685C8)
 I (..\NewCode\mission.h)(0x67ED4914)
-I (..\NewCode\grayscale.h)(0x67F539CF)
+I (..\NewCode\grayscale.h)(0x67FA76E3)
 I (..\NewCode\BeepLedTips.h)(0x67EDD9F4)
 I (..\NewCode\pid_2.h)(0x67F525FE)
 F (..\driver\ni2c.c)(0x6667EF1C)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/ni2c.o -MD)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -2074,7 +2074,7 @@ I (F:\d\keil5\core\ARM\ARMCLANG\include\string.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\math.h)(0x625260D6)
 I (..\driver\ni2c.h)(0x67E4FE8C)
 F (..\driver\icm20608.c)(0x66A8D676)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/icm20608.o -MD)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -2169,7 +2169,7 @@ I (..\driver\neeprom.h)(0x666C7C10)
 I (..\driver\ngpio.h)(0x6667B8A6)
 I (..\driver\icm20608.h)(0x66A71864)
 F (..\driver\nbutton.c)(0x666F9EA2)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/nbutton.o -MD)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -2260,7 +2260,7 @@ I (F:\d\keil5\core\ARM\ARMCLANG\include\math.h)(0x625260D6)
 I (..\driver\ngpio.h)(0x6667B8A6)
 I (..\driver\nbutton.h)(0x6667B932)
 F (..\driver\ngpio.c)(0x67ED4A36)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/ngpio.o -MD)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -2344,7 +2344,7 @@ I (..\source\ti\driverlib\m0p\dl_interrupt.h)(0x662FCA6A)
 I (..\source\ti\driverlib\m0p\dl_systick.h)(0x662FCA6A)
 I (..\driver\ngpio.h)(0x6667B8A6)
 F (..\driver\neeprom.c)(0x666C7BEE)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/neeprom.o -MD)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -2435,7 +2435,7 @@ I (F:\d\keil5\core\ARM\ARMCLANG\include\math.h)(0x625260D6)
 I (..\driver\w25qxx.h)(0x665E03C0)
 I (..\driver\neeprom.h)(0x666C7C10)
 F (..\driver\w25qxx.c)(0x667D08A6)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/w25qxx.o -MD)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -2525,7 +2525,7 @@ I (F:\d\keil5\core\ARM\ARMCLANG\include\string.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\math.h)(0x625260D6)
 I (..\driver\w25qxx.h)(0x665E03C0)
 F (..\driver\us100.c)(0x67EA2B66)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/us100.o -MD)
-I (..\user\headfile.h)(0x67F7D0FD)
+I (..\user\headfile.h)(0x67FA7198)
 I (..\user\datatype.h)(0x666D0F42)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdio.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdlib.h)(0x625260D6)
@@ -2534,7 +2534,7 @@ I (F:\d\keil5\core\ARM\ARMCLANG\include\stdint.h)(0x625260D8)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdbool.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\math.h)(0x625260D6)
 I (..\user\main.h)(0x666719DC)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -2651,7 +2651,7 @@ I (..\driver\drv_imu.h)(0x6656DB84)
 I (..\driver\bsp_mpu6050.h)(0x67E685C8)
 I (..\driver\inv_mpu.h)(0x67E685C8)
 I (..\NewCode\mission.h)(0x67ED4914)
-I (..\NewCode\grayscale.h)(0x67F539CF)
+I (..\NewCode\grayscale.h)(0x67FA76E3)
 I (..\NewCode\BeepLedTips.h)(0x67EDD9F4)
 I (..\NewCode\pid_2.h)(0x67F525FE)
 I (..\NewCode\vofa.h)(0x67F7D0FD)
@@ -2660,7 +2660,7 @@ F (..\driver\ICM42688.C)(0x67E4F82E)(-xc -std=c99 --target=arm-arm-none-eabi -mc
 F (..\driver\ICM42688.h)(0x67E4F82E)()
 F (..\driver\bno08x.c)(0x67E64F50)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/bno08x.o -MD)
 I (..\driver\bno08x.h)(0x67E53C76)
-I (..\user\headfile.h)(0x67F7D0FD)
+I (..\user\headfile.h)(0x67FA7198)
 I (..\user\datatype.h)(0x666D0F42)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdio.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdlib.h)(0x625260D6)
@@ -2669,7 +2669,7 @@ I (F:\d\keil5\core\ARM\ARMCLANG\include\stdint.h)(0x625260D8)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdbool.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\math.h)(0x625260D6)
 I (..\user\main.h)(0x666719DC)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -2785,13 +2785,13 @@ I (..\driver\drv_imu.h)(0x6656DB84)
 I (..\driver\bsp_mpu6050.h)(0x67E685C8)
 I (..\driver\inv_mpu.h)(0x67E685C8)
 I (..\NewCode\mission.h)(0x67ED4914)
-I (..\NewCode\grayscale.h)(0x67F539CF)
+I (..\NewCode\grayscale.h)(0x67FA76E3)
 I (..\NewCode\BeepLedTips.h)(0x67EDD9F4)
 I (..\NewCode\pid_2.h)(0x67F525FE)
 I (..\NewCode\vofa.h)(0x67F7D0FD)
 F (..\driver\bno08x.h)(0x67E53C76)()
 F (..\driver\drv_imu.c)(0x67E54056)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/drv_imu.o -MD)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -2878,7 +2878,7 @@ I (..\driver\drv_imu.h)(0x6656DB84)
 F (..\driver\drv_imu.h)(0x6656DB84)()
 F (..\driver\bsp_mpu6050.c)(0x67E68B90)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/bsp_mpu6050.o -MD)
 I (..\driver\bsp_mpu6050.h)(0x67E685C8)
-I (..\user\headfile.h)(0x67F7D0FD)
+I (..\user\headfile.h)(0x67FA7198)
 I (..\user\datatype.h)(0x666D0F42)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdio.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdlib.h)(0x625260D6)
@@ -2887,7 +2887,7 @@ I (F:\d\keil5\core\ARM\ARMCLANG\include\stdint.h)(0x625260D8)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdbool.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\math.h)(0x625260D6)
 I (..\user\main.h)(0x666719DC)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -3003,7 +3003,7 @@ I (..\driver\bno08x.h)(0x67E53C76)
 I (..\driver\drv_imu.h)(0x6656DB84)
 I (..\driver\inv_mpu.h)(0x67E685C8)
 I (..\NewCode\mission.h)(0x67ED4914)
-I (..\NewCode\grayscale.h)(0x67F539CF)
+I (..\NewCode\grayscale.h)(0x67FA76E3)
 I (..\NewCode\BeepLedTips.h)(0x67EDD9F4)
 I (..\NewCode\pid_2.h)(0x67F525FE)
 I (..\NewCode\vofa.h)(0x67F7D0FD)
@@ -3017,11 +3017,11 @@ I (F:\d\keil5\core\ARM\ARMCLANG\include\stdlib.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\string.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\math.h)(0x625260D6)
 I (..\driver\inv_mpu.h)(0x67E685C8)
-I (..\user\headfile.h)(0x67F7D0FD)
+I (..\user\headfile.h)(0x67FA7198)
 I (..\user\datatype.h)(0x666D0F42)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdbool.h)(0x625260D6)
 I (..\user\main.h)(0x666719DC)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -3137,7 +3137,7 @@ I (..\driver\bno08x.h)(0x67E53C76)
 I (..\driver\drv_imu.h)(0x6656DB84)
 I (..\driver\bsp_mpu6050.h)(0x67E685C8)
 I (..\NewCode\mission.h)(0x67ED4914)
-I (..\NewCode\grayscale.h)(0x67F539CF)
+I (..\NewCode\grayscale.h)(0x67FA76E3)
 I (..\NewCode\BeepLedTips.h)(0x67EDD9F4)
 I (..\NewCode\pid_2.h)(0x67F525FE)
 I (..\NewCode\vofa.h)(0x67F7D0FD)
@@ -3150,11 +3150,11 @@ I (F:\d\keil5\core\ARM\ARMCLANG\include\stdlib.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\string.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\math.h)(0x625260D6)
 I (..\driver\inv_mpu.h)(0x67E685C8)
-I (..\user\headfile.h)(0x67F7D0FD)
+I (..\user\headfile.h)(0x67FA7198)
 I (..\user\datatype.h)(0x666D0F42)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdbool.h)(0x625260D6)
 I (..\user\main.h)(0x666719DC)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -3270,7 +3270,7 @@ I (..\driver\bno08x.h)(0x67E53C76)
 I (..\driver\drv_imu.h)(0x6656DB84)
 I (..\driver\bsp_mpu6050.h)(0x67E685C8)
 I (..\NewCode\mission.h)(0x67ED4914)
-I (..\NewCode\grayscale.h)(0x67F539CF)
+I (..\NewCode\grayscale.h)(0x67FA76E3)
 I (..\NewCode\BeepLedTips.h)(0x67EDD9F4)
 I (..\NewCode\pid_2.h)(0x67F525FE)
 I (..\NewCode\vofa.h)(0x67F7D0FD)
@@ -3279,7 +3279,7 @@ I (..\driver\dmpKey.h)(0x67E65462)
 I (..\driver\dmpmap.h)(0x67E65462)
 F (..\driver\inv_mpu_dmp_motion_driver.h)(0x67E65462)()
 F (..\driver\jy61p.c)(0x66D878AC)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/jy61p.o -MD)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -3364,7 +3364,7 @@ I (..\source\ti\driverlib\m0p\dl_systick.h)(0x662FCA6A)
 I (..\driver\jy61p.h)(0x67F2229F)
 F (..\driver\jy61p.h)(0x67F2229F)()
 F (..\driver\usart3.c)(0x67EE7B18)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/usart3.o -MD)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -3451,7 +3451,7 @@ I (..\driver\usart3.h)(0x66D9907A)
 F (..\driver\usart3.h)(0x66D9907A)()
 F (..\apply\user.h)(0x637F3A0C)()
 F (..\apply\rgb.c)(0x6667C788)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/rgb.o -MD)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -3533,7 +3533,7 @@ I (..\source\ti\driverlib\dl_vref.h)(0x662FCA6A)
 I (..\source\ti\driverlib\dl_wwdt.h)(0x662FCA6A)
 I (..\source\ti\driverlib\m0p\dl_interrupt.h)(0x662FCA6A)
 I (..\source\ti\driverlib\m0p\dl_systick.h)(0x662FCA6A)
-I (..\user\headfile.h)(0x67F7D0FD)
+I (..\user\headfile.h)(0x67FA7198)
 I (..\user\datatype.h)(0x666D0F42)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdio.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdlib.h)(0x625260D6)
@@ -3577,12 +3577,12 @@ I (..\driver\drv_imu.h)(0x6656DB84)
 I (..\driver\bsp_mpu6050.h)(0x67E685C8)
 I (..\driver\inv_mpu.h)(0x67E685C8)
 I (..\NewCode\mission.h)(0x67ED4914)
-I (..\NewCode\grayscale.h)(0x67F539CF)
+I (..\NewCode\grayscale.h)(0x67FA76E3)
 I (..\NewCode\BeepLedTips.h)(0x67EDD9F4)
 I (..\NewCode\pid_2.h)(0x67F525FE)
 I (..\NewCode\vofa.h)(0x67F7D0FD)
 F (..\apply\wp_math.c)(0x66AA59DC)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/wp_math.o -MD)
-I (..\user\headfile.h)(0x67F7D0FD)
+I (..\user\headfile.h)(0x67FA7198)
 I (..\user\datatype.h)(0x666D0F42)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdio.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdlib.h)(0x625260D6)
@@ -3591,7 +3591,7 @@ I (F:\d\keil5\core\ARM\ARMCLANG\include\stdint.h)(0x625260D8)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdbool.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\math.h)(0x625260D6)
 I (..\user\main.h)(0x666719DC)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -3708,12 +3708,12 @@ I (..\driver\drv_imu.h)(0x6656DB84)
 I (..\driver\bsp_mpu6050.h)(0x67E685C8)
 I (..\driver\inv_mpu.h)(0x67E685C8)
 I (..\NewCode\mission.h)(0x67ED4914)
-I (..\NewCode\grayscale.h)(0x67F539CF)
+I (..\NewCode\grayscale.h)(0x67FA76E3)
 I (..\NewCode\BeepLedTips.h)(0x67EDD9F4)
 I (..\NewCode\pid_2.h)(0x67F525FE)
 I (..\NewCode\vofa.h)(0x67F7D0FD)
 F (..\apply\pid.c)(0x66AA59DC)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/pid.o -MD)
-I (..\user\headfile.h)(0x67F7D0FD)
+I (..\user\headfile.h)(0x67FA7198)
 I (..\user\datatype.h)(0x666D0F42)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdio.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdlib.h)(0x625260D6)
@@ -3722,7 +3722,7 @@ I (F:\d\keil5\core\ARM\ARMCLANG\include\stdint.h)(0x625260D8)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdbool.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\math.h)(0x625260D6)
 I (..\user\main.h)(0x666719DC)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -3839,12 +3839,12 @@ I (..\driver\drv_imu.h)(0x6656DB84)
 I (..\driver\bsp_mpu6050.h)(0x67E685C8)
 I (..\driver\inv_mpu.h)(0x67E685C8)
 I (..\NewCode\mission.h)(0x67ED4914)
-I (..\NewCode\grayscale.h)(0x67F539CF)
+I (..\NewCode\grayscale.h)(0x67FA76E3)
 I (..\NewCode\BeepLedTips.h)(0x67EDD9F4)
 I (..\NewCode\pid_2.h)(0x67F525FE)
 I (..\NewCode\vofa.h)(0x67F7D0FD)
 F (..\apply\ui.c)(0x66A8A826)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/ui.o -MD)
-I (..\user\headfile.h)(0x67F7D0FD)
+I (..\user\headfile.h)(0x67FA7198)
 I (..\user\datatype.h)(0x666D0F42)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdio.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdlib.h)(0x625260D6)
@@ -3853,7 +3853,7 @@ I (F:\d\keil5\core\ARM\ARMCLANG\include\stdint.h)(0x625260D8)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdbool.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\math.h)(0x625260D6)
 I (..\user\main.h)(0x666719DC)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -3970,12 +3970,12 @@ I (..\driver\drv_imu.h)(0x6656DB84)
 I (..\driver\bsp_mpu6050.h)(0x67E685C8)
 I (..\driver\inv_mpu.h)(0x67E685C8)
 I (..\NewCode\mission.h)(0x67ED4914)
-I (..\NewCode\grayscale.h)(0x67F539CF)
+I (..\NewCode\grayscale.h)(0x67FA76E3)
 I (..\NewCode\BeepLedTips.h)(0x67EDD9F4)
 I (..\NewCode\pid_2.h)(0x67F525FE)
 I (..\NewCode\vofa.h)(0x67F7D0FD)
 F (..\apply\rc.c)(0x66A74CF2)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/rc.o -MD)
-I (..\user\Headfile.h)(0x67F7D0FD)
+I (..\user\Headfile.h)(0x67FA7198)
 I (..\user\datatype.h)(0x666D0F42)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdio.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdlib.h)(0x625260D6)
@@ -3984,7 +3984,7 @@ I (F:\d\keil5\core\ARM\ARMCLANG\include\stdint.h)(0x625260D8)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdbool.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\math.h)(0x625260D6)
 I (..\user\main.h)(0x666719DC)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -4101,12 +4101,12 @@ I (..\driver\drv_imu.h)(0x6656DB84)
 I (..\driver\bsp_mpu6050.h)(0x67E685C8)
 I (..\driver\inv_mpu.h)(0x67E685C8)
 I (..\NewCode\mission.h)(0x67ED4914)
-I (..\NewCode\grayscale.h)(0x67F539CF)
+I (..\NewCode\grayscale.h)(0x67FA76E3)
 I (..\NewCode\BeepLedTips.h)(0x67EDD9F4)
 I (..\NewCode\pid_2.h)(0x67F525FE)
 I (..\NewCode\vofa.h)(0x67F7D0FD)
 F (..\apply\sensor.c)(0x66A8D676)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/sensor.o -MD)
-I (..\user\headfile.h)(0x67F7D0FD)
+I (..\user\headfile.h)(0x67FA7198)
 I (..\user\datatype.h)(0x666D0F42)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdio.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdlib.h)(0x625260D6)
@@ -4115,7 +4115,7 @@ I (F:\d\keil5\core\ARM\ARMCLANG\include\stdint.h)(0x625260D8)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdbool.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\math.h)(0x625260D6)
 I (..\user\main.h)(0x666719DC)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -4232,7 +4232,7 @@ I (..\driver\drv_imu.h)(0x6656DB84)
 I (..\driver\bsp_mpu6050.h)(0x67E685C8)
 I (..\driver\inv_mpu.h)(0x67E685C8)
 I (..\NewCode\mission.h)(0x67ED4914)
-I (..\NewCode\grayscale.h)(0x67F539CF)
+I (..\NewCode\grayscale.h)(0x67FA76E3)
 I (..\NewCode\BeepLedTips.h)(0x67EDD9F4)
 I (..\NewCode\pid_2.h)(0x67F525FE)
 I (..\NewCode\vofa.h)(0x67F7D0FD)
@@ -4244,7 +4244,7 @@ I (..\apply\Fusion\FusionCalibration.h)(0x62AB3AB2)
 I (..\apply\Fusion\FusionCompass.h)(0x62AB3AB2)
 I (..\apply\Fusion\FusionOffset.h)(0x62AB3AB2)
 F (..\apply\filter.c)(0x64083F42)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/filter.o -MD)
-I (..\user\Headfile.h)(0x67F7D0FD)
+I (..\user\Headfile.h)(0x67FA7198)
 I (..\user\datatype.h)(0x666D0F42)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdio.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdlib.h)(0x625260D6)
@@ -4253,7 +4253,7 @@ I (F:\d\keil5\core\ARM\ARMCLANG\include\stdint.h)(0x625260D8)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdbool.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\math.h)(0x625260D6)
 I (..\user\main.h)(0x666719DC)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -4370,12 +4370,12 @@ I (..\driver\drv_imu.h)(0x6656DB84)
 I (..\driver\bsp_mpu6050.h)(0x67E685C8)
 I (..\driver\inv_mpu.h)(0x67E685C8)
 I (..\NewCode\mission.h)(0x67ED4914)
-I (..\NewCode\grayscale.h)(0x67F539CF)
+I (..\NewCode\grayscale.h)(0x67FA76E3)
 I (..\NewCode\BeepLedTips.h)(0x67EDD9F4)
 I (..\NewCode\pid_2.h)(0x67F525FE)
 I (..\NewCode\vofa.h)(0x67F7D0FD)
 F (..\apply\gray_detection.c)(0x67EDDCA8)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/gray_detection.o -MD)
-I (..\user\headfile.h)(0x67F7D0FD)
+I (..\user\headfile.h)(0x67FA7198)
 I (..\user\datatype.h)(0x666D0F42)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdio.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdlib.h)(0x625260D6)
@@ -4384,7 +4384,7 @@ I (F:\d\keil5\core\ARM\ARMCLANG\include\stdint.h)(0x625260D8)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdbool.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\math.h)(0x625260D6)
 I (..\user\main.h)(0x666719DC)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -4501,13 +4501,13 @@ I (..\driver\drv_imu.h)(0x6656DB84)
 I (..\driver\bsp_mpu6050.h)(0x67E685C8)
 I (..\driver\inv_mpu.h)(0x67E685C8)
 I (..\NewCode\mission.h)(0x67ED4914)
-I (..\NewCode\grayscale.h)(0x67F539CF)
+I (..\NewCode\grayscale.h)(0x67FA76E3)
 I (..\NewCode\BeepLedTips.h)(0x67EDD9F4)
 I (..\NewCode\pid_2.h)(0x67F525FE)
 I (..\NewCode\vofa.h)(0x67F7D0FD)
 I (..\apply\user.h)(0x637F3A0C)
 F (..\apply\self_balancing.c)(0x637E3A18)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/self_balancing.o -MD)
-I (..\user\headfile.h)(0x67F7D0FD)
+I (..\user\headfile.h)(0x67FA7198)
 I (..\user\datatype.h)(0x666D0F42)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdio.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdlib.h)(0x625260D6)
@@ -4516,7 +4516,7 @@ I (F:\d\keil5\core\ARM\ARMCLANG\include\stdint.h)(0x625260D8)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdbool.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\math.h)(0x625260D6)
 I (..\user\main.h)(0x666719DC)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -4633,13 +4633,13 @@ I (..\driver\drv_imu.h)(0x6656DB84)
 I (..\driver\bsp_mpu6050.h)(0x67E685C8)
 I (..\driver\inv_mpu.h)(0x67E685C8)
 I (..\NewCode\mission.h)(0x67ED4914)
-I (..\NewCode\grayscale.h)(0x67F539CF)
+I (..\NewCode\grayscale.h)(0x67FA76E3)
 I (..\NewCode\BeepLedTips.h)(0x67EDD9F4)
 I (..\NewCode\pid_2.h)(0x67F525FE)
 I (..\NewCode\vofa.h)(0x67F7D0FD)
 I (..\apply\user.h)(0x637F3A0C)
 F (..\apply\motor_control.c)(0x66A7B2DC)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/motor_control.o -MD)
-I (..\user\headfile.h)(0x67F7D0FD)
+I (..\user\headfile.h)(0x67FA7198)
 I (..\user\datatype.h)(0x666D0F42)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdio.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdlib.h)(0x625260D6)
@@ -4648,7 +4648,7 @@ I (F:\d\keil5\core\ARM\ARMCLANG\include\stdint.h)(0x625260D8)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdbool.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\math.h)(0x625260D6)
 I (..\user\main.h)(0x666719DC)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -4765,13 +4765,13 @@ I (..\driver\drv_imu.h)(0x6656DB84)
 I (..\driver\bsp_mpu6050.h)(0x67E685C8)
 I (..\driver\inv_mpu.h)(0x67E685C8)
 I (..\NewCode\mission.h)(0x67ED4914)
-I (..\NewCode\grayscale.h)(0x67F539CF)
+I (..\NewCode\grayscale.h)(0x67FA76E3)
 I (..\NewCode\BeepLedTips.h)(0x67EDD9F4)
 I (..\NewCode\pid_2.h)(0x67F525FE)
 I (..\NewCode\vofa.h)(0x67F7D0FD)
 I (..\apply\user.h)(0x637F3A0C)
 F (..\apply\sdk.c)(0x666C8C58)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/sdk.o -MD)
-I (..\user\headfile.h)(0x67F7D0FD)
+I (..\user\headfile.h)(0x67FA7198)
 I (..\user\datatype.h)(0x666D0F42)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdio.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdlib.h)(0x625260D6)
@@ -4780,7 +4780,7 @@ I (F:\d\keil5\core\ARM\ARMCLANG\include\stdint.h)(0x625260D8)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdbool.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\math.h)(0x625260D6)
 I (..\user\main.h)(0x666719DC)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -4897,13 +4897,13 @@ I (..\driver\drv_imu.h)(0x6656DB84)
 I (..\driver\bsp_mpu6050.h)(0x67E685C8)
 I (..\driver\inv_mpu.h)(0x67E685C8)
 I (..\NewCode\mission.h)(0x67ED4914)
-I (..\NewCode\grayscale.h)(0x67F539CF)
+I (..\NewCode\grayscale.h)(0x67FA76E3)
 I (..\NewCode\BeepLedTips.h)(0x67EDD9F4)
 I (..\NewCode\pid_2.h)(0x67F525FE)
 I (..\NewCode\vofa.h)(0x67F7D0FD)
 I (..\apply\user.h)(0x637F3A0C)
 F (..\apply\vision.c)(0x6667CEB8)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/vision.o -MD)
-I (..\user\headfile.h)(0x67F7D0FD)
+I (..\user\headfile.h)(0x67FA7198)
 I (..\user\datatype.h)(0x666D0F42)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdio.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdlib.h)(0x625260D6)
@@ -4912,7 +4912,7 @@ I (F:\d\keil5\core\ARM\ARMCLANG\include\stdint.h)(0x625260D8)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdbool.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\math.h)(0x625260D6)
 I (..\user\main.h)(0x666719DC)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -5029,12 +5029,12 @@ I (..\driver\drv_imu.h)(0x6656DB84)
 I (..\driver\bsp_mpu6050.h)(0x67E685C8)
 I (..\driver\inv_mpu.h)(0x67E685C8)
 I (..\NewCode\mission.h)(0x67ED4914)
-I (..\NewCode\grayscale.h)(0x67F539CF)
+I (..\NewCode\grayscale.h)(0x67FA76E3)
 I (..\NewCode\BeepLedTips.h)(0x67EDD9F4)
 I (..\NewCode\pid_2.h)(0x67F525FE)
 I (..\NewCode\vofa.h)(0x67F7D0FD)
 F (..\apply\nclink.c)(0x67EA2BEC)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/nclink.o -MD)
-I (..\user\headfile.h)(0x67F7D0FD)
+I (..\user\headfile.h)(0x67FA7198)
 I (..\user\datatype.h)(0x666D0F42)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdio.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdlib.h)(0x625260D6)
@@ -5043,7 +5043,7 @@ I (F:\d\keil5\core\ARM\ARMCLANG\include\stdint.h)(0x625260D8)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdbool.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\math.h)(0x625260D6)
 I (..\user\main.h)(0x666719DC)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -5160,12 +5160,12 @@ I (..\driver\drv_imu.h)(0x6656DB84)
 I (..\driver\bsp_mpu6050.h)(0x67E685C8)
 I (..\driver\inv_mpu.h)(0x67E685C8)
 I (..\NewCode\mission.h)(0x67ED4914)
-I (..\NewCode\grayscale.h)(0x67F539CF)
+I (..\NewCode\grayscale.h)(0x67FA76E3)
 I (..\NewCode\BeepLedTips.h)(0x67EDD9F4)
 I (..\NewCode\pid_2.h)(0x67F525FE)
 I (..\NewCode\vofa.h)(0x67F7D0FD)
 F (..\apply\attitude_selfstable.c)(0x6669BDAE)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/attitude_selfstable.o -MD)
-I (..\user\headfile.h)(0x67F7D0FD)
+I (..\user\headfile.h)(0x67FA7198)
 I (..\user\datatype.h)(0x666D0F42)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdio.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdlib.h)(0x625260D6)
@@ -5174,7 +5174,7 @@ I (F:\d\keil5\core\ARM\ARMCLANG\include\stdint.h)(0x625260D8)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdbool.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\math.h)(0x625260D6)
 I (..\user\main.h)(0x666719DC)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -5291,12 +5291,12 @@ I (..\driver\drv_imu.h)(0x6656DB84)
 I (..\driver\bsp_mpu6050.h)(0x67E685C8)
 I (..\driver\inv_mpu.h)(0x67E685C8)
 I (..\NewCode\mission.h)(0x67ED4914)
-I (..\NewCode\grayscale.h)(0x67F539CF)
+I (..\NewCode\grayscale.h)(0x67FA76E3)
 I (..\NewCode\BeepLedTips.h)(0x67EDD9F4)
 I (..\NewCode\pid_2.h)(0x67F525FE)
 I (..\NewCode\vofa.h)(0x67F7D0FD)
 F (..\apply\developer\developer_mode.c)(0x6667DCFA)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/developer_mode.o -MD)
-I (..\user\headfile.h)(0x67F7D0FD)
+I (..\user\headfile.h)(0x67FA7198)
 I (..\user\datatype.h)(0x666D0F42)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdio.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdlib.h)(0x625260D6)
@@ -5305,7 +5305,7 @@ I (F:\d\keil5\core\ARM\ARMCLANG\include\stdint.h)(0x625260D8)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdbool.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\math.h)(0x625260D6)
 I (..\user\main.h)(0x666719DC)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -5422,13 +5422,13 @@ I (..\driver\drv_imu.h)(0x6656DB84)
 I (..\driver\bsp_mpu6050.h)(0x67E685C8)
 I (..\driver\inv_mpu.h)(0x67E685C8)
 I (..\NewCode\mission.h)(0x67ED4914)
-I (..\NewCode\grayscale.h)(0x67F539CF)
+I (..\NewCode\grayscale.h)(0x67FA76E3)
 I (..\NewCode\BeepLedTips.h)(0x67EDD9F4)
 I (..\NewCode\pid_2.h)(0x67F525FE)
 I (..\NewCode\vofa.h)(0x67F7D0FD)
 I (..\apply\user.h)(0x637F3A0C)
 F (..\apply\developer\subtask.c)(0x66763C9E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/subtask.o -MD)
-I (..\user\headfile.h)(0x67F7D0FD)
+I (..\user\headfile.h)(0x67FA7198)
 I (..\user\datatype.h)(0x666D0F42)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdio.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdlib.h)(0x625260D6)
@@ -5437,7 +5437,7 @@ I (F:\d\keil5\core\ARM\ARMCLANG\include\stdint.h)(0x625260D8)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdbool.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\math.h)(0x625260D6)
 I (..\user\main.h)(0x666719DC)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -5554,7 +5554,7 @@ I (..\driver\drv_imu.h)(0x6656DB84)
 I (..\driver\bsp_mpu6050.h)(0x67E685C8)
 I (..\driver\inv_mpu.h)(0x67E685C8)
 I (..\NewCode\mission.h)(0x67ED4914)
-I (..\NewCode\grayscale.h)(0x67F539CF)
+I (..\NewCode\grayscale.h)(0x67FA76E3)
 I (..\NewCode\BeepLedTips.h)(0x67EDD9F4)
 I (..\NewCode\pid_2.h)(0x67F525FE)
 I (..\NewCode\vofa.h)(0x67F7D0FD)
@@ -5580,7 +5580,7 @@ I (F:\d\keil5\core\ARM\ARMCLANG\include\stdbool.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdint.h)(0x625260D8)
 F (..\NewCode\mission.c)(0x67EDD9D0)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/mission.o -MD)
 I (..\NewCode\mission.h)(0x67ED4914)
-I (..\user\headfile.h)(0x67F7D0FD)
+I (..\user\headfile.h)(0x67FA7198)
 I (..\user\datatype.h)(0x666D0F42)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdio.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdlib.h)(0x625260D6)
@@ -5589,7 +5589,7 @@ I (F:\d\keil5\core\ARM\ARMCLANG\include\stdint.h)(0x625260D8)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdbool.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\math.h)(0x625260D6)
 I (..\user\main.h)(0x666719DC)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -5705,14 +5705,14 @@ I (..\driver\bno08x.h)(0x67E53C76)
 I (..\driver\drv_imu.h)(0x6656DB84)
 I (..\driver\bsp_mpu6050.h)(0x67E685C8)
 I (..\driver\inv_mpu.h)(0x67E685C8)
-I (..\NewCode\grayscale.h)(0x67F539CF)
+I (..\NewCode\grayscale.h)(0x67FA76E3)
 I (..\NewCode\BeepLedTips.h)(0x67EDD9F4)
 I (..\NewCode\pid_2.h)(0x67F525FE)
 I (..\NewCode\vofa.h)(0x67F7D0FD)
 F (..\NewCode\mission.h)(0x67ED4914)()
-F (..\NewCode\grayscale.c)(0x67F539CF)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/grayscale.o -MD)
-I (..\NewCode\grayscale.h)(0x67F539CF)
-I (..\user\headfile.h)(0x67F7D0FD)
+F (..\NewCode\grayscale.c)(0x67FA748C)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/grayscale.o -MD)
+I (..\NewCode\grayscale.h)(0x67FA76E3)
+I (..\user\headfile.h)(0x67FA7198)
 I (..\user\datatype.h)(0x666D0F42)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdio.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdlib.h)(0x625260D6)
@@ -5721,7 +5721,7 @@ I (F:\d\keil5\core\ARM\ARMCLANG\include\stdint.h)(0x625260D8)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdbool.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\math.h)(0x625260D6)
 I (..\user\main.h)(0x666719DC)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -5841,10 +5841,10 @@ I (..\NewCode\mission.h)(0x67ED4914)
 I (..\NewCode\BeepLedTips.h)(0x67EDD9F4)
 I (..\NewCode\pid_2.h)(0x67F525FE)
 I (..\NewCode\vofa.h)(0x67F7D0FD)
-F (..\NewCode\grayscale.h)(0x67F539CF)()
+F (..\NewCode\grayscale.h)(0x67FA76E3)()
 F (..\NewCode\BeepLedTips.c)(0x67EDD9D0)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/beepledtips.o -MD)
 I (..\NewCode\BeepLedTips.h)(0x67EDD9F4)
-I (..\user\headfile.h)(0x67F7D0FD)
+I (..\user\headfile.h)(0x67FA7198)
 I (..\user\datatype.h)(0x666D0F42)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdio.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdlib.h)(0x625260D6)
@@ -5853,7 +5853,7 @@ I (F:\d\keil5\core\ARM\ARMCLANG\include\stdint.h)(0x625260D8)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdbool.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\math.h)(0x625260D6)
 I (..\user\main.h)(0x666719DC)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -5970,13 +5970,13 @@ I (..\driver\drv_imu.h)(0x6656DB84)
 I (..\driver\bsp_mpu6050.h)(0x67E685C8)
 I (..\driver\inv_mpu.h)(0x67E685C8)
 I (..\NewCode\mission.h)(0x67ED4914)
-I (..\NewCode\grayscale.h)(0x67F539CF)
+I (..\NewCode\grayscale.h)(0x67FA76E3)
 I (..\NewCode\pid_2.h)(0x67F525FE)
 I (..\NewCode\vofa.h)(0x67F7D0FD)
 F (..\NewCode\BeepLedTips.h)(0x67EDD9F4)()
 F (..\NewCode\Control.c)(0x67F51DCB)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/control.o -MD)
 I (..\NewCode\Control.h)(0x67EDDDE8)
-I (..\user\headfile.h)(0x67F7D0FD)
+I (..\user\headfile.h)(0x67FA7198)
 I (..\user\datatype.h)(0x666D0F42)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdio.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdlib.h)(0x625260D6)
@@ -5985,7 +5985,7 @@ I (F:\d\keil5\core\ARM\ARMCLANG\include\stdint.h)(0x625260D8)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdbool.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\math.h)(0x625260D6)
 I (..\user\main.h)(0x666719DC)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -6102,14 +6102,14 @@ I (..\driver\drv_imu.h)(0x6656DB84)
 I (..\driver\bsp_mpu6050.h)(0x67E685C8)
 I (..\driver\inv_mpu.h)(0x67E685C8)
 I (..\NewCode\mission.h)(0x67ED4914)
-I (..\NewCode\grayscale.h)(0x67F539CF)
+I (..\NewCode\grayscale.h)(0x67FA76E3)
 I (..\NewCode\BeepLedTips.h)(0x67EDD9F4)
 I (..\NewCode\pid_2.h)(0x67F525FE)
 I (..\NewCode\vofa.h)(0x67F7D0FD)
 F (..\NewCode\Control.h)(0x67EDDDE8)()
 F (..\NewCode\pid_2.c)(0x67F53678)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/pid_2.o -MD)
 I (..\NewCode\pid_2.h)(0x67F525FE)
-I (..\user\headfile.h)(0x67F7D0FD)
+I (..\user\headfile.h)(0x67FA7198)
 I (..\user\datatype.h)(0x666D0F42)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdio.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdlib.h)(0x625260D6)
@@ -6118,7 +6118,7 @@ I (F:\d\keil5\core\ARM\ARMCLANG\include\stdint.h)(0x625260D8)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdbool.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\math.h)(0x625260D6)
 I (..\user\main.h)(0x666719DC)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -6235,13 +6235,13 @@ I (..\driver\drv_imu.h)(0x6656DB84)
 I (..\driver\bsp_mpu6050.h)(0x67E685C8)
 I (..\driver\inv_mpu.h)(0x67E685C8)
 I (..\NewCode\mission.h)(0x67ED4914)
-I (..\NewCode\grayscale.h)(0x67F539CF)
+I (..\NewCode\grayscale.h)(0x67FA76E3)
 I (..\NewCode\BeepLedTips.h)(0x67EDD9F4)
 I (..\NewCode\vofa.h)(0x67F7D0FD)
 F (..\NewCode\pid_2.h)(0x67F525FE)()
 F (..\NewCode\vofa.c)(0x67F7D0FD)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../source/third_party/CMSIS/Core/Include -I ../source -I ../ -I ../driver -I ../user -I ../apply -I ../apply/developer -I ../apply/Fusion -I ../NewCode -I ../../mspm0g3507_20240729-D__UVISION_VERSION="537" -D__MSPM0G3507__ -D__MSPM0G3507__-o ./objects/vofa.o -MD)
 I (..\NewCode\vofa.h)(0x67F7D0FD)
-I (..\user\headfile.h)(0x67F7D0FD)
+I (..\user\headfile.h)(0x67FA7198)
 I (..\user\datatype.h)(0x666D0F42)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdio.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdlib.h)(0x625260D6)
@@ -6250,7 +6250,7 @@ I (F:\d\keil5\core\ARM\ARMCLANG\include\stdint.h)(0x625260D8)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\stdbool.h)(0x625260D6)
 I (F:\d\keil5\core\ARM\ARMCLANG\include\math.h)(0x625260D6)
 I (..\user\main.h)(0x666719DC)
-I (..\ti_msp_dl_config.h)(0x67F92FC5)
+I (..\ti_msp_dl_config.h)(0x67FB4FCB)
 I (..\source\ti\devices\msp\msp.h)(0x662FCA6A)
 I (..\source\ti\devices\DeviceFamily.h)(0x662FCA6A)
 I (..\source\ti\devices\msp\m0p\mspm0g350x.h)(0x662FCA6A)
@@ -6367,7 +6367,7 @@ I (..\driver\drv_imu.h)(0x6656DB84)
 I (..\driver\bsp_mpu6050.h)(0x67E685C8)
 I (..\driver\inv_mpu.h)(0x67E685C8)
 I (..\NewCode\mission.h)(0x67ED4914)
-I (..\NewCode\grayscale.h)(0x67F539CF)
+I (..\NewCode\grayscale.h)(0x67FA76E3)
 I (..\NewCode\BeepLedTips.h)(0x67EDD9F4)
 I (..\NewCode\pid_2.h)(0x67F525FE)
 F (..\NewCode\vofa.h)(0x67F7D0FD)()

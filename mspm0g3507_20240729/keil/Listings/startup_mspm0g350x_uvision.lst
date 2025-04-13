@@ -96,7 +96,7 @@ ARM Macro Assembler    Page 2
    54 00001024 00001000 
                        Heap_Size
                                EQU              0x00001000  ;000 namelesstch202
-                                                            40501
+                                                            40501     
    55 00001024         
    56 00001024                 AREA             HEAP, NOINIT, READWRITE, ALIGN=
 3
